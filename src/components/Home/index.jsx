@@ -5,6 +5,7 @@ import IlmiyYonalish from '../IlmiyYonalish'
 import AsosiySanalar from '../AsosiySanalar'
 import MaqolagaQoyTalab from '../MaqolagaQoyTalab'
 import Fotogalareya from '../Fotogalareya'
+import Videogalareya from '../Videogalareya'
 
 const Home = () => {
     return (
@@ -15,6 +16,7 @@ const Home = () => {
             <AsosiySanalar />
             <MaqolagaQoyTalab />
             <Fotogalareya />
+            <Videogalareya />
         </div>
     )
 }
