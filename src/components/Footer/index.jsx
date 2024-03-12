@@ -13,7 +13,7 @@ const Footer = () => {
                 <Rivojlanish />
             </div>
             <div class="flex justify-center sm:justify-end">
-                <ul class="w-full flex gap-2 sm:gap-3 md:gap-4 py-4 px-4 bg-gray-200">
+                <ul class="w-full flex sm:justify-end gap-2 sm:gap-3 md:gap-4 py-4 px-4 bg-gray-200">
                     <li class="w-[40px] h-auto">
                         <Link target="_blank" to="https://t.me/kspi_rector">
                             <img

@@ -1,5 +1,6 @@
 import React from "react";
 import icon from "../../assets/icons/kspi-icon.jpeg";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
     return (
@@ -112,8 +113,8 @@ const Navbar = () => {
                         </ul>
                     </div>
                     {/* Emblema */}
-                    <a
-                        href="www.google.com"
+                    <Link
+                        to="/"
                         className="text-xl flex items-center gap-3"
                     >
                         <img
@@ -124,7 +125,7 @@ const Navbar = () => {
                         <p className="hidden sm:inline-block w-[150px] text-[0.8em] leading-5 font-medium">
                             Qo'qon davlat pedagogika instituti
                         </p>
-                    </a>
+                    </Link>
                     {/* /Emblema */}
                 </div>
                 {/* lg top */}
@@ -208,12 +209,12 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <a
-                        href="www.google.com"
+                    <Link
+                        to="login"
                         className="btn btn-sm md:btn-md btn-success text-white font-bold"
                     >
-                        Ro'yxatdan o'tish
-                    </a>
+                            Kirish
+                    </Link>
                 </div>
             </div>
         </nav>

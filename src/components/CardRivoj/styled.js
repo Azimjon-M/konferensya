@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 export const Box = styled.div`
-    width: 170px;
-    height: 170px;
+    width: 150px;
+    height: 150px;
     padding: 5px;
     display: flex;
     flex-direction: column;

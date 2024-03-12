@@ -138,7 +138,7 @@ const Rivojlanish = () => {
                 miqyosda harakat qilishga da’vatdir. BMT O‘zbekistonda amalga
                 oshirish uchun harakat qilayotgan maqsadlar:
             </p>
-            <div className="w-full grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 place-items-center place-content-center gap-4 lg:px-20 xl:px-14">
+            <div className="w-full grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 place-items-center place-content-center gap-4 px-4 lg:px-20 xl:px-14">
                 {data.map((item) => (
                     <CardRivoj
                         key={item.numb}
