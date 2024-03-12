@@ -3,7 +3,7 @@ import React from "react";
 
 const MaqolagaQoyTalab = () => {
     return (
-        <div className="flex flex-col bg-gray-100">
+        <div className="flex flex-col bg-gray-50">
             <div className="bg-gray-200 px-4 py-4 sm:px-8 md:px-12 md:py-8 lg:px-16">
                 <h1 className="font-medium sm:text-[18px] lg:text-[20px] xl:text-[22px] 2xl:text-[24px]">
                     Maqolaga qo'yilgan talablar
