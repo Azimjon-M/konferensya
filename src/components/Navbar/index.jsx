@@ -36,76 +36,76 @@ const Navbar = () => {
                             className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
                         >
                             <li>
-                                <a href="https://www.google.com">Asosiy</a>
+                                <Link to="https://www.google.com">Asosiy</Link>
                             </li>
                             <li>
                                 <details>
                                     <summary>Ma'lumotlar</summary>
                                     <ul className="p-2">
                                         <li>
-                                            <a href="https://www.google.com">
+                                            <Link to="https://www.google.com">
                                                 Muxim sanalar
-                                            </a>
+                                            </Link>
                                         </li>
                                         <li>
-                                            <a href="https://www.google.com">
+                                            <Link to="https://www.google.com">
                                                 Qo'mita
-                                            </a>
+                                            </Link>
                                         </li>
                                         <li>
-                                            <a href="https://www.google.com">
+                                            <Link to="https://www.google.com">
                                                 Ilmiy maslaxat qo'mita
-                                            </a>
+                                            </Link>
                                         </li>
                                         <li>
-                                            <a href="https://www.google.com">
+                                            <Link to="https://www.google.com">
                                                 O'tgan voqealar
-                                            </a>
+                                            </Link>
                                         </li>
                                         <li>
-                                            <a href="https://www.google.com">
+                                            <Link to="https://www.google.com">
                                                 Nashrlar
-                                            </a>
+                                            </Link>
                                         </li>
                                     </ul>
                                 </details>
                             </li>
                             <li>
-                                <a href="https://www.google.com">To'lovlar</a>
+                                <Link to="https://www.google.com">To'lovlar</Link>
                             </li>
                             <li>
                                 <details>
                                     <summary>Maqola</summary>
                                     <ul className="p-2">
                                         <li>
-                                            <a href="https://www.google.com">
+                                            <Link to="https://www.google.com">
                                                 Maqola talablari
-                                            </a>
+                                            </Link>
                                         </li>
                                         <li>
-                                            <a href="https://www.google.com">
+                                            <Link to="https://www.google.com">
                                                 Maqola jo'natish
-                                            </a>
+                                            </Link>
                                         </li>
                                     </ul>
                                 </details>
                             </li>
                             <li>
-                                <a href="https://www.google.com">Bog'lanish</a>
+                                <Link to="https://www.google.com">Bog'lanish</Link>
                             </li>
                             <li>
                                 <details>
                                     <summary>Dastur</summary>
                                     <ul className="p-2">
                                         <li>
-                                            <a href="https://www.google.com">
+                                            <Link to="https://www.google.com">
                                                 Asosiy ma'ruzachilar
-                                            </a>
+                                            </Link>
                                         </li>
                                         <li>
-                                            <a href="https://www.google.com">
+                                            <Link to="https://www.google.com">
                                                 Taklif etilganlar
-                                            </a>
+                                            </Link>
                                         </li>
                                     </ul>
                                 </details>
@@ -132,76 +132,76 @@ const Navbar = () => {
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal font-semibold px-1">
                         <li>
-                            <a href="https://www.google.com">Asosiy</a>
+                            <Link to="/">Asosiy</Link>
                         </li>
                         <li>
                             <details>
                                 <summary>Ma'lumotlar</summary>
                                 <ul className="p-2">
                                     <li>
-                                        <a className="whitespace-nowrap" href="https://www.google.com">
-                                            Muxim sanalar
-                                        </a>
+                                        <Link className="whitespace-nowrap" to="muhim-sanalar">
+                                            Muhim sanalar
+                                        </Link>
                                     </li>
                                     <li>
-                                        <a className="whitespace-nowrap" href="https://www.google.com">
+                                        <Link className="whitespace-nowrap" to="qo'mita">
                                             Qo'mita
-                                        </a>
+                                        </Link>
                                     </li>
                                     <li>
-                                        <a className="whitespace-nowrap" href="https://www.google.com">
+                                        <Link className="whitespace-nowrap" to="ilmiy-maslaxat-qo'mita">
                                             Ilmiy maslaxat qo'mita
-                                        </a>
+                                        </Link>
                                     </li>
                                     <li>
-                                        <a className="whitespace-nowrap" href="https://www.google.com">
+                                        <Link className="whitespace-nowrap" to="o'tgan-voqealar">
                                             O'tgan voqealar
-                                        </a>
+                                        </Link>
                                     </li>
                                     <li>
-                                        <a className="whitespace-nowrap" href="https://www.google.com">
+                                        <Link className="whitespace-nowrap" to="nashrlar">
                                             Nashrlar
-                                        </a>
+                                        </Link>
                                     </li>
                                 </ul>
                             </details>
                         </li>
                         <li>
-                            <a href="https://www.google.com">To'lovlar</a>
+                            <Link to="to'lovlar">To'lovlar</Link>
                         </li>
                         <li>
                             <details>
                                 <summary>Maqola</summary>
                                 <ul className="p-2">
                                     <li>
-                                        <a className="whitespace-nowrap" href="https://www.google.com">
+                                        <Link className="whitespace-nowrap" to="maqola-talablari">
                                             Maqola talablari
-                                        </a>
+                                        </Link>
                                     </li>
                                     <li>
-                                        <a className="whitespace-nowrap" href="https://www.google.com">
+                                        <Link className="whitespace-nowrap" to="maqola-jo'natish">
                                             Maqola jo'natish
-                                        </a>
+                                        </Link>
                                     </li>
                                 </ul>
                             </details>
                         </li>
                         <li>
-                            <a href="https://www.google.com">Bog'lanish</a>
+                            <Link to="bog'lanish">Bog'lanish</Link>
                         </li>
                         <li>
                             <details>
                                 <summary>Dastur</summary>
                                 <ul className="p-2">
                                     <li>
-                                        <a className="whitespace-nowrap" href="https://www.google.com">
+                                        <Link className="whitespace-nowrap" to="asosiy-maruzachilar">
                                             Asosiy ma'ruzachilar
-                                        </a>
+                                        </Link>
                                     </li>
                                     <li>
-                                        <a className="whitespace-nowrap" href="https://www.google.com">
+                                        <Link className="whitespace-nowrap" to="taklif-etilganlar">
                                             Taklif etilganlar
-                                        </a>
+                                        </Link>
                                     </li>
                                 </ul>
                             </details>
