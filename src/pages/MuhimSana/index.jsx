@@ -1,8 +1,11 @@
 import React from 'react'
+import MuhimSanalar from '../../components/MuhimSanalar'
 
 const MuhimSanaPage = () => {
     return (
-        <div>MuhimSanaPage</div>
+        <div>
+            <MuhimSanalar />
+        </div>
     )
 }
 

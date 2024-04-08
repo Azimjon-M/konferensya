@@ -5,13 +5,14 @@ import "swiper/css/pagination";
 import "../App/style.css";
 import { Pagination, Navigation } from "swiper/modules";
 import video from "../../assets/video/train.mp4";
+import TranslateMessage from "../TranslateMessage";
 
 const Videogalareya = () => {
     return (
         <div className="flex flex-col bg-gray-100">
             <div className="bg-gray-200 px-4 py-4 sm:px-8 md:px-12 md:py-8 lg:px-16">
                 <h1 className="font-medium sm:text-[18px] lg:text-[20px] xl:text-[22px] 2xl:text-[24px]">
-                    Videogalareya
+                    <TranslateMessage id="Videogalareya" /> 
                 </h1>
             </div>
             <div className="w-full bg-gray-50 py-10">

@@ -17,6 +17,7 @@ import img_14 from "../../assets/icons/Rivojlanish/14.png";
 import img_15 from "../../assets/icons/Rivojlanish/15.png";
 import img_16 from "../../assets/icons/Rivojlanish/16.png";
 import img_17 from "../../assets/icons/Rivojlanish/17.png";
+import TranslateMessage from "../TranslateMessage";
 
 const Rivojlanish = () => {
     const data = [
@@ -127,16 +128,11 @@ const Rivojlanish = () => {
         <div className="w-full bg-gray-50">
             <div className="bg-gray-200 px-4 py-4 sm:px-8 md:px-12 md:py-8 lg:px-16">
                 <h1 className="font-medium sm:text-[18px] lg:text-[20px] xl:text-[22px] 2xl:text-[24px]">
-                    O'zbekistonda Barqaror Rivojlanish Maqsadlari
+                    <TranslateMessage id="UzbBarqarorRivoj" />
                 </h1>
             </div>
             <p className="p-5 sm:p-8 md:px-12 lg:px-16 lg:text-[17px] xl:text-[18px] 2xl:text-[20px]">
-                Barqaror rivojlanish sohasidagi maqsadlar Yer yuzida
-                qashshoqlikka barham berish, atrof-muhit va iqlimni himoya
-                qilish hamda dunyodagi barcha kishilar tinchlik va ravnaq
-                topishdan bahramand bo‘lishini ta’minlash bo‘yicha global
-                miqyosda harakat qilishga da’vatdir. BMT O‘zbekistonda amalga
-                oshirish uchun harakat qilayotgan maqsadlar:
+                <TranslateMessage id="UzbBarqarorRivojContent" />
             </p>
             <div className="w-full grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 place-items-center place-content-center gap-4 px-4 lg:px-20 xl:px-14">
                 {data.map((item) => (

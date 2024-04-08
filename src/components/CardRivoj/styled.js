@@ -9,5 +9,5 @@ export const Box = styled.div`
     justify-content: center;
     align-items: center;
     border-radius: 5px;
-    background-color: ${(props) => (props.bg)};
+    background-color: ${props => props.$txt11};
 `;
