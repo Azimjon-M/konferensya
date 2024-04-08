@@ -1,6 +1,6 @@
 import axiosInstance from ".";
 
-const ep = "document/carusel/";
+const ep = "home/carusel/";
 
 const getCarousel = () => axiosInstance.get(ep);
 
