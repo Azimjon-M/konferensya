@@ -1,8 +1,11 @@
 import React from 'react'
+import AsosiyMaruzachi from '../../components/AsosiyMaruzachi'
 
 const AsosiyMaruzachiPage = () => {
     return (
-        <div>AsosiyMaruzachiPage</div>
+        <div>
+            <AsosiyMaruzachi />
+        </div>
     )
 }
 
