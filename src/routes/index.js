@@ -4,7 +4,7 @@ import HomePage from '../pages/Home';
 import AdminPanelPage from '../pages/AdminPanel';
 import LoginPage from '../pages/Login';
 import MuhimSanaPage from '../pages/MuhimSana';
-import QomitaPage from '../pages/Qomita';
+import QomitaPage from '../pages/QomitaPage';
 import IMQomitaPage from '../pages/IlmiyMaslahatQomita';
 import OtganVoqealarPage from '../pages/OtganVoqealar';
 import NashrlarPage from '../pages/Nashrlar';
