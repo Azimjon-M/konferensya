@@ -14,7 +14,6 @@ const WelcomeSec = () => {
     useEffect(() => {
         getData();
     }, []);
-    console.log(data);
 
     return (
         <>
