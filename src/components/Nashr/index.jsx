@@ -16,7 +16,6 @@ function Nashr() {
     };
     fetchNashr();
   }, []);
-
   console.log(data);
   return (
     <div>
