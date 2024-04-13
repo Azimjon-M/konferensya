@@ -1,7 +1,6 @@
 import React from "react";
 import TranslateMessage from "../TranslateMessage";
 
-
 const MaqolagaQoyTalab = () => {
     return (
         <div className="flex flex-col bg-gray-50">
@@ -11,8 +10,15 @@ const MaqolagaQoyTalab = () => {
                 </h1>
             </div>
             <div className="flex flex-col justify-center items-center gap-6 py-10">
-                <p><TranslateMessage id="MaqolaTalabContent" /></p>
-                <a href="Download_file" className="btn btn-sm md:btn-md btn-success text-white font-bold"><TranslateMessage id="MaqolaTalabBtn" /></a>
+                <p>
+                    <TranslateMessage id="MaqolaTalabContent" />
+                </p>
+                <a
+                    href="Download_file"
+                    className="btn btn-sm md:btn-md btn-success text-white font-bold"
+                >
+                    <TranslateMessage id="MaqolaTalabBtn" />
+                </a>
             </div>
         </div>
     );
