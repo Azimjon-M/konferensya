@@ -1,8 +1,11 @@
 import React from 'react'
+import TaklifEtilganlar from '../../components/TaklifEtilganlar'
 
 const TaklifEtilganPage = () => {
     return (
-        <div>TaklifEtilganPage</div>
+        <div>
+            <TaklifEtilganlar />
+        </div>
     )
 }
 
