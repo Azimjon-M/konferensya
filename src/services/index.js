@@ -1,6 +1,6 @@
 import axios from "axios";
 const token =
-    "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzEyODA4MzY0LCJpYXQiOjE3MTI1NDkxNjQsImp0aSI6IjNhY2Y2ZGUyM2E5MzRmZmU4MDBkNjlkOTdiMGZlMjdhIiwidXNlcl9pZCI6Mn0.kPkbksMsz2vZ9hj6DzR_1C5_oSPlCztOu00Stb1adwU";
+    "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzEzMjQzMjkwLCJpYXQiOjE3MTI5ODQwOTAsImp0aSI6ImEyNTk2MmRiMjY3ZTRjNGQ4YWEyMDZkZTI3NzNkZjQxIiwidXNlcl9pZCI6Mn0.Y9DDvQr-Yi_HygulT4vNyaPFII2zNb5aCUpWHx6Ap94";
 
 const axiosInstance = axios.create({
     baseURL: "https://konfirensiya.pythonanywhere.com/",

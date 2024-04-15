@@ -1,7 +1,19 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import TranslateMessage from "../TranslateMessage";
+import APIHome from "../../services/home";
 
 const MaqolagaQoyTalab = () => {
+    const [data, setData] = useState(null);
+
+    const getData = async () => {
+        await APIHome.getMaqolaTalab()
+            .then((res) => setData(res.data))
+            .catch((err) => console.log(err));
+    };
+    useEffect(() => {
+        getData();
+    }, []);
+
     return (
         <div className="flex flex-col bg-gray-50">
             <div className="bg-gray-200 px-4 py-4 sm:px-8 md:px-12 md:py-8 lg:px-16">
@@ -13,12 +25,16 @@ const MaqolagaQoyTalab = () => {
                 <p>
                     <TranslateMessage id="MaqolaTalabContent" />
                 </p>
-                <a
-                    href="Download_file"
-                    className="btn btn-sm md:btn-md btn-success text-white font-bold"
-                >
-                    <TranslateMessage id="MaqolaTalabBtn" />
-                </a>
+                {data &&
+                    data.map((item, idx) => (
+                        <a
+                            key={idx}
+                            href={item.file}
+                            className="btn btn-sm md:btn-md btn-success text-white font-bold"
+                        >
+                            <TranslateMessage id="MaqolaTalabBtn" />
+                        </a>
+                    ))}
             </div>
         </div>
     );
