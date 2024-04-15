@@ -1,8 +1,11 @@
 import React from 'react'
+import OtganVoqealar from '../../components/OtganVoqealar'
 
 const OtganVoqealarPage = () => {
     return (
-        <div>OtganVoqealarPage</div>
+        <div>
+            <OtganVoqealar/>
+        </div>
     )
 }
 

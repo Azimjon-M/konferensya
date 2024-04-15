@@ -1,8 +1,11 @@
 import React from 'react'
+import IMQomita from '../../components/IMQomita'
 
 const IMQomitaPage = () => {
     return (
-        <div>IMQomitaPage</div>
+        <div>
+            <IMQomita/>
+        </div>
     )
 }
 
