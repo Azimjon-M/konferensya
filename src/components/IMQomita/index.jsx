@@ -1,6 +1,7 @@
 import React from "react";
 
 function IMQomita() {
+    // const [data, setData] = use 
   return (
     <div>
       <div class="max-w-6xl mx-auto my-20 relative overflow-x-auto shadow-md sm:rounded-lg">
