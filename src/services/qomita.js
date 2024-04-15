@@ -10,7 +10,7 @@ const endPoints = {
   rais: "qomita/rais/",
   raisorinbosari: "qomita/raisorinbosari/",
   reklama: "qomita/reklama/",
-  razinachi: "qomita/xazinachi/",
+  xazinachi: "qomita/xazinachi/",
 };
 
 const createAPIRequest = (endPoint) => () => axiosInstance.get(endPoint);
