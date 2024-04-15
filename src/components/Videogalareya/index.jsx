@@ -4,7 +4,6 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "../App/style.css";
 import { Pagination, Navigation } from "swiper/modules";
-import video from "../../assets/video/train.mp4";
 import TranslateMessage from "../TranslateMessage";
 import APIHome from "../../services/home";
 

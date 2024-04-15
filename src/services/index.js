@@ -1,11 +1,11 @@
 import axios from "axios";
-const token = "";
+// const token = "";
 
 const axiosInstance = axios.create({
   baseURL: "https://konfirensiya.pythonanywhere.com/",
   headers: {
     "Content-Type": "application/json",
-    Authorization: `Bearer ${token}`,
+    // Authorization: `Bearer ${token}`,
   },
 });
 
