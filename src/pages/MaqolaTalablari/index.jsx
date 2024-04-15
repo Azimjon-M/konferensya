@@ -1,9 +1,11 @@
-import React from 'react'
-
+import React from "react";
+import MaqolaTalab from "../../components/MaqolaTalab";
 const MaqolaTalablariPage = () => {
     return (
-        <div>MaqolaTalablariPage</div>
-    )
-}
+        <div>
+            <MaqolaTalab />
+        </div>
+    );
+};
 
-export default MaqolaTalablariPage
+export default MaqolaTalablariPage;
