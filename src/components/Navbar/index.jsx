@@ -377,12 +377,12 @@ const Navbar = () => {
                             </button>
                         </ul>
                     </div>
-                    <Link
+                    {/* <Link
                         to="login"
                         className="btn btn-sm md:btn-md btn-success text-white font-bold"
                     >
                         <TranslateMessage id="navKirish" />
-                    </Link>
+                    </Link> */}
                 </div>
             </div>
         </nav>
