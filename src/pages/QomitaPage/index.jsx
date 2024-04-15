@@ -1,8 +1,11 @@
 import React from 'react'
+import Qomita from '../../components/Qomita'
 
 const QomitaPage = () => {
     return (
-        <div>QomitaPage</div>
+        <div>
+            <Qomita/>
+        </div>
     )
 }
 
