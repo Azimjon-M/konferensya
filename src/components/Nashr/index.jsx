@@ -16,7 +16,6 @@ function Nashr() {
     };
     fetchNashr();
   }, []);
-  console.log(data);
   return (
     <div>
       <div className="bg-gray-200  text-center py-6 lg:py-10 xl:py-16 2xl:py-20 ">

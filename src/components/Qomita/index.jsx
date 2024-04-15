@@ -7,7 +7,7 @@ function Qomita() {
   useEffect(() => {
     const fechtQomita = async () => {
       try {
-        const response = await APIQomita.getHammuallif();
+        const response = await APIQomita.hammuallif();
         setQomita(response.data);
       } catch (error) {
         console.error("Ma'lumotlarni olishda xatolik yuz berdi:", error);
