@@ -1,5 +1,5 @@
 const initialState = {
-    isLang: "uz",
+    isLang: "en",
 };
 
 const reducerLang = (state = initialState, { type }) => {
@@ -11,7 +11,7 @@ const reducerLang = (state = initialState, { type }) => {
         case "en":
             return { isLang: (state.isLang = "en") };
         default:
-            return { isLang: (state.isLang = "uz") };
+            return { isLang: (state.isLang = "en") };
     }
 };
 
