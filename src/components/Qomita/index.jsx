@@ -7,10 +7,10 @@ function Qomita() {
     maslahatchi: [],
     hammuallif: [],
     rais: [],
-    raisorinbosari: [],
+    raisOrinbosari: [],
     kotibiyat: [],
     xazinachi: [],
-    ilmiydastur: [],
+    ilmiyDastur: [],
     reklama: [],
     logistika: [],
   });
