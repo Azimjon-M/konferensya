@@ -1,16 +1,16 @@
 import axiosInstance from ".";
 
 const endPoints = {
-  hammuallif: "qomita/hammuallif/",
-  homiy: "qomita/homiy/",
-  ilmiydastur: "qomita/ilmiydastur/",
-  kotibiyat: "qomita/kotibiyat/",
-  logistika: "qomita/logistika/",
-  maslahatchi: "qomita/maslahatchi/",
-  rais: "qomita/rais/",
-  raisorinbosari: "qomita/raisorinbosari/",
-  reklama: "qomita/reklama/",
-  xazinachi: "qomita/xazinachi/",
+  getHomiy: "qomita/homiy/",
+  getMaslahatchi: "qomita/maslahatchi/",
+  getHammuallif: "qomita/hammuallif/",
+  getRais: "qomita/rais/",
+  getRaisorinbosari: "qomita/raisorinbosari/",
+  getKotibiyat: "qomita/kotibiyat/",
+  getXazinachi: "qomita/xazinachi/",
+  getIlmiydastur: "qomita/ilmiydastur/",
+  getReklama: "qomita/reklama/",
+  getLogistika: "qomita/logistika/",
 };
 
 const createAPIRequest = (endPoint) => () => axiosInstance.get(endPoint);
