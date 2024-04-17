@@ -7,7 +7,7 @@ function Nashr() {
   useEffect(() => {
     const fetchNashr = async () => {
       try {
-        const response = await APINash.get();
+        const response = await APINash.getNashr();
         setData(response.data);
       } catch (error) {
         console.log(error);
@@ -15,6 +15,7 @@ function Nashr() {
     };
     fetchNashr();
   }, []);
+
   return (
     <div>
       <div className="bg-gray-200  text-center py-6 lg:py-10 xl:py-16 2xl:py-20 ">
