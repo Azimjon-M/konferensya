@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import APIMaqolaTalab from "../../services/talab";
 import { useSelector } from "react-redux";
+import TranslateMessage from "../TranslateMessage";
 
 const MaqolaTalab = () => {
     const Lang = useSelector((state) => state.reducerLang.isLang);
@@ -26,34 +27,32 @@ const MaqolaTalab = () => {
                     Maqola talablari
                 </h1>
             </div>
-            <div>
+            <div className="px-4 py-4 sm:px-8 md:px-12 md:py-8 lg:px-16">
                 {data &&
                     data.map((item) => (
-                        <div key={item.id}>
+                        <div className="mb-5 text-md md:text-lg xl:text-xl" key={item.id}>
                             <p>
-                                <b>Title: </b> {item[`title_${Lang}`]}
+                                {item[`title_${Lang}`]}
                             </p>
                             <p>
-                                <b>SubTitle: </b> {item[`subtitle_${Lang}`]}
+                                {item[`subtitle_${Lang}`]}:
                             </p>
                         </div>
                     ))}
-                <ul>
-                    <b>Taablar:</b>
+                <ul className="mb-5 text-md md:text-lg xl:text-xl">
                     {dataTalab &&
                         dataTalab.map((item) => (
-                            <li key={item.id}>{item[`name_${Lang}`]}</li>
+                            <li className="list-disc ms-6" key={item.id}>{item[`name_${Lang}`]}</li>
                         ))}
                 </ul>
                 {data &&
                     data.map((item) => (
-                        <div key={item.id}>
+                        <div className="mb-5 text-md md:text-lg xl:text-xl" key={item.id}>
                             <span>
-                                <b>Link content: </b>
                                 {item[`link_text_${Lang}`]}
                             </span>
-                            <a href={item.file} className="link">
-                                Yuklab olish
+                            <a href={item.file} className="link ms-3 text-blue-500">
+                                <TranslateMessage id="MaqolaTalabBtn" />
                             </a>
                         </div>
                     ))}
