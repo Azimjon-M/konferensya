@@ -6,12 +6,16 @@ const MaqolaTalab = () => {
     const Lang = useSelector((state) => state.reducerLang.isLang);
     const [data, setData] = useState(null);
     const [dataTalab, setDataTalab] = useState(null);
+    const [dataXalqaroTalab, setDataXalqaroTalab] = useState(null);
 
     const getData = async () => {
         await APIMaqolaTalab.getMaqolaTalab()
             .then((res) => setData(res.data))
             .catch((err) => console.log(err));
         await APIMaqolaTalab.getMaqolaTalablar()
+            .then((res) => setDataTalab(res.data))
+            .catch((err) => console.log(err));
+        await APIMaqolaTalab.getXalqaroTalab()
             .then((res) => setDataTalab(res.data))
             .catch((err) => console.log(err));
     };
@@ -29,19 +33,21 @@ const MaqolaTalab = () => {
                 {data &&
                     data.map((item) => (
                         <div key={item.id}>
-                            <p>{item[`title_${Lang}`]}</p>
-                            <p>{item[`subtitle_${Lang}`]}</p>
+                            <p><b>Title: </b> {item[`title_${Lang}`]}</p>
+                            <p><b>SubTitle: </b> {item[`subtitle_${Lang}`]}</p>
                             <ul>
                                 <b>Taablar:</b>
-                                {
-                                    dataTalab && dataTalab.map(item => (
+                                {dataTalab &&
+                                    dataTalab.map((item) => (
                                         <li key={item.id}>
                                             {item[`name_${Lang}`]}
                                         </li>
-                                    ))
-                                }
+                                    ))}
                             </ul>
-                            <span>{item[`link_text_${Lang}`]}</span><a href={item.file} className="link">Yuklab olish</a>
+                            <span><b>Link content: </b>{item[`link_text_${Lang}`]}</span>
+                            <a href={item.file} className="link">
+                                Yuklab olish
+                            </a>
                         </div>
                     ))}
             </div>
