@@ -15,9 +15,6 @@ const MaqolaTalab = () => {
         await APIMaqolaTalab.getMaqolaTalablar()
             .then((res) => setDataTalab(res.data))
             .catch((err) => console.log(err));
-        await APIMaqolaTalab.getXalqaroTalab()
-            .then((res) => setDataTalab(res.data))
-            .catch((err) => console.log(err));
     };
     useEffect(() => {
         getData();
@@ -33,18 +30,28 @@ const MaqolaTalab = () => {
                 {data &&
                     data.map((item) => (
                         <div key={item.id}>
-                            <p><b>Title: </b> {item[`title_${Lang}`]}</p>
-                            <p><b>SubTitle: </b> {item[`subtitle_${Lang}`]}</p>
-                            <ul>
-                                <b>Taablar:</b>
-                                {dataTalab &&
-                                    dataTalab.map((item) => (
-                                        <li key={item.id}>
-                                            {item[`name_${Lang}`]}
-                                        </li>
-                                    ))}
-                            </ul>
-                            <span><b>Link content: </b>{item[`link_text_${Lang}`]}</span>
+                            <p>
+                                <b>Title: </b> {item[`title_${Lang}`]}
+                            </p>
+                            <p>
+                                <b>SubTitle: </b> {item[`subtitle_${Lang}`]}
+                            </p>
+                        </div>
+                    ))}
+                <ul>
+                    <b>Taablar:</b>
+                    {dataTalab &&
+                        dataTalab.map((item) => (
+                            <li key={item.id}>{item[`name_${Lang}`]}</li>
+                        ))}
+                </ul>
+                {data &&
+                    data.map((item) => (
+                        <div key={item.id}>
+                            <span>
+                                <b>Link content: </b>
+                                {item[`link_text_${Lang}`]}
+                            </span>
                             <a href={item.file} className="link">
                                 Yuklab olish
                             </a>
