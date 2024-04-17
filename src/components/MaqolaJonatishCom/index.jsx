@@ -1,11 +1,12 @@
 import React from "react";
+import TranslateMessage from "../TranslateMessage";
 
 const MaqolaJonatishCom = () => {
   return (
     <div>
-      <div className="bg-gray-200 px-4 py-4 sm:px-8 md:px-12 md:py-8 lg:px-16 mb-5">
-        <h1 className="font-medium sm:text-[18px] lg:text-[20px] xl:text-[22px] 2xl:text-[24px]">
-          Maqola jo'natish
+      <div className="bg-gray-200  text-center py-6 lg:py-10 xl:py-16 2xl:py-20 mb-5">
+        <h1 className="text-[2em] lg:text-[4em] font-semibold">
+        <TranslateMessage id="navDropMaqolaJonat" />
         </h1>
       </div>
       <div className="flex flex-col md:flex-row justify-between items-center mt-10 px-4 sm:px-8 md:px-12 lg:px-16">

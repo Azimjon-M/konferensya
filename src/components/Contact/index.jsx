@@ -4,6 +4,7 @@ import icon_bottom from "../../assets/images/icon_bottom.jpg";
 import { FaPhone } from "react-icons/fa6";
 import { IoIosMail } from "react-icons/io";
 import APIBoglanish from "../../services/boglanish";
+import TranslateMessage from "../TranslateMessage";
 
 const Contact = () => {
     const [data, setData] = useState(null);
@@ -18,11 +19,11 @@ const Contact = () => {
     }, []);
     return (
         <div>
-            <div className="bg-gray-200 px-4 py-4 sm:px-8 md:px-12 md:py-8 lg:px-16 mb-5">
-                <h1 className="font-medium sm:text-[18px] lg:text-[20px] xl:text-[22px] 2xl:text-[24px]">
-                    Bog'lanish
-                </h1>
-            </div>
+      <div className="bg-gray-200  text-center py-6 lg:py-10 xl:py-16 2xl:py-20 mb-5">
+        <h1 className="text-[2em] lg:text-[4em] font-semibold">
+        <TranslateMessage id="navBoglanish" />
+        </h1>
+      </div>
             <div className="flex flex-col items-center mt-10 mb-5">
                 <img src={icon_top} alt="icon" />
                 <div className="flex flex-col items-center my-5 px-5 text-center">
