@@ -21,7 +21,7 @@ function IMQomita() {
         <table className="w-full text-lg text-left rtl:text-right text-gray-500 dark:text-gray-400">
           <thead className="text-lg text-gray-700 uppercase bg-blue-100 dark:bg-gray-700 dark:text-gray-400">
             <tr>
-              <th scope="col" className=" w-[5%] px-6 py-3">
+              <th scope="col" className="w-[5%] px-6 py-3">
                 №
               </th>
               <th scope="col" className="px-6 py-3">
