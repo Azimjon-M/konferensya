@@ -34,7 +34,7 @@ const Carousel = () => {
                     modules={[Autoplay, Navigation]}
                     className="mySwiper w-full h-[70vh] object-cover md:h-[90vh] transition-all duration-2000 ease-in-out z-0"
                 >
-                    {data?.map((item, idx) => (
+                    {data.map((item, idx) => (
                             <SwiperSlide key={idx}>
                                 <div className="relative h-full">
                                     <div className="absolute inset-0 bg-gradient-to-b from-[#000] to-transparent opacity-60" />

@@ -6,7 +6,7 @@ const MaqolaTalab = () => {
     const Lang = useSelector((state) => state.reducerLang.isLang);
     const [data, setData] = useState(null);
     const [dataTalab, setDataTalab] = useState(null);
-    const [dataXalqaroTalab, setDataXalqaroTalab] = useState(null);
+    // const [dataXalqaroTalab, setDataXalqaroTalab] = useState(null);
 
     const getData = async () => {
         await APIMaqolaTalab.getMaqolaTalab()
