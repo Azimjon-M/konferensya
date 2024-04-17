@@ -24,7 +24,7 @@ const MaqolaTalab = () => {
         <div>
             <div className="bg-gray-200  text-center py-6 lg:py-10 xl:py-16 2xl:py-20 ">
                 <h1 className="text-[2em] lg:text-[4em] font-semibold">
-                    Maqola talablari
+                    <TranslateMessage id="navDropMaqolaTalab" />
                 </h1>
             </div>
             <div className="px-4 py-4 sm:px-8 md:px-12 md:py-8 lg:px-16">
