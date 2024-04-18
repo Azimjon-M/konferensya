@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
 import APIMaruza from "../../services/maruzachi";
 import TranslateMessage from "../TranslateMessage";
+import { useSelector } from "react-redux";
 
 const AsosiyMaruzachi = () => {
   const [data, setData] = useState([]);
+  const Lang = useSelector((state) => state.reducerLang.isLang);
 
   useEffect(() => {
     const fechtMuhimSana = async () => {
@@ -33,25 +35,25 @@ const AsosiyMaruzachi = () => {
             <img className="w-96 rounded mb-5" src={item.rasm} alt="" />
 
             <h3 className="text-xl md:text-2xl xl:text-3xl font-semibold mb-3">
-              {item.name_uz}
+              {item[`name_${Lang}`]}
             </h3>
             <p className="mb-5 text-md md:text-lg xl:text-xl">
-              <b>Mavzu: </b>
-              {item.sarlavxa_uz}
+              <b><TranslateMessage id="mavzu" />: </b>
+              {item[`sarlavxa_${Lang}`]}
             </p>
 
             <h3 className="text-xl md:text-2xl xl:text-3xl mb-3">
-              Annotatsiya
+            <TranslateMessage id="annotatsiya" />:
             </h3>
             <div className="mb-5 text-md md:text-lg xl:text-xl">
-              {item.xulosa_uz}
+              {item[`xulosa_${Lang}`]}
             </div>
 
             <h3 className="text-xl md:text-2xl xl:text-3xl mb-3">
-              Biografiyasi:
+            <TranslateMessage id="biografiya" />:
             </h3>
             <div className="mb-5 text-md md:text-lg xl:text-xl">
-              {item.tarjima_xol_uz}
+              {item[`tarjima_xol_${Lang}`]}
             </div>
           </div>
         ))}

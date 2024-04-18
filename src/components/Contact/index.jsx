@@ -28,10 +28,10 @@ const Contact = () => {
                 <img src={icon_top} alt="icon" />
                 <div className="flex flex-col items-center my-5 px-5 text-center">
                     <h2 className="font-bold mb-5 text-lg md:text-xl lg:text-2xl xl:text-3xl">
-                        Institut address
+                    <TranslateMessage id="institutManzil" />
                     </h2>
                     <p className="mb-10 text-md md:text-lg lg:text-xl xl:text-2xl">
-                        Farg'ona viloyati Qo'qon shaxri Turon ko'chasi 17-uy
+                    <TranslateMessage id="institutManzilBatafsil" />
                     </p>
                     {data &&
                         data.map((item) => (

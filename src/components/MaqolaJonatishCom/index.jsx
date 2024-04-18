@@ -11,7 +11,7 @@ const MaqolaJonatishCom = () => {
       </div>
       <div className="flex flex-col md:flex-row justify-between items-center mt-10 px-4 sm:px-8 md:px-12 lg:px-16">
         <h2 className="font-bold text-lg text-center md:text-start mb-5">
-          Maqolangizni ushbu elektron pochta manziliga yuborishingiz mumkin
+        <TranslateMessage id="maqolaJonatish" />
         </h2>
         <a
           className="link text-blue-400 text-lg mb-5"
