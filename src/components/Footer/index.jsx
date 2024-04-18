@@ -68,8 +68,8 @@ const Footer = () => {
                     </li>
                 </ul>
             </div>
-            <Link to="authors">
-                <div className="bg-black text-white text-center py-4">
+            <Link to="/authors">
+                <div className="flex flex-col md:flex-row justify-center items-center bg-black text-white text-center py-4">
                     <p>
                         <TranslateMessage id="footerContetn_1" />
                     </p>
