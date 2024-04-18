@@ -8,17 +8,17 @@ import APIHome from "../../services/home";
 import { useSelector } from "react-redux";
 
 const Carousel = () => {
-    const Lang = useSelector(state => state.reducerLang.isLang)
-    const [data, setData] = useState(null);
+  const Lang = useSelector((state) => state.reducerLang.isLang);
+  const [data, setData] = useState(null);
 
-    const getData = async () => {
-        await APIHome.getCarousel()
-            .then((res) => setData(res.data))
-            .catch((err) => console.log(err));
-    };
-    useEffect(() => {
-        getData();
-    }, []);
+  const getData = async () => {
+    await APIHome.getCarousel()
+      .then((res) => setData(res.data))
+      .catch((err) => console.log(err));
+  };
+  useEffect(() => {
+    getData();
+  }, []);
 
     return (
         <>
