@@ -34,7 +34,28 @@
         "Fotogalareya": "Fotogalareya",
         "Videogalareya": "Videogalareya",
         "UzbBarqarorRivoj": "Oʻzbekistonda Barqaror Rivojlanish Maqsadlari",
-        "UzbBarqarorRivojContent": "Barqaror rivojlanish sohasidagi maqsadlar Yer yuzida qashshoqlikka barham berish, atrof-muhit va iqlimni himoya qilish hamda dunyodagi barcha kishilar tinchlik va ravnaq topishdan bahramand bo‘lishini ta’minlash bo‘yicha global miqyosda harakat qilishga da’vatdir. BMT O‘zbekistonda amalga oshirish uchun harakat qilayotgan maqsadlar:"
+        "UzbBarqarorRivojContent": "Barqaror rivojlanish sohasidagi maqsadlar Yer yuzida qashshoqlikka barham berish, atrof-muhit va iqlimni himoya qilish hamda dunyodagi barcha kishilar tinchlik va ravnaq topishdan bahramand bo‘lishini ta’minlash bo‘yicha global miqyosda harakat qilishga da’vatdir. BMT O‘zbekistonda amalga oshirish uchun harakat qilayotgan maqsadlar:",
+                
+        "qomitaHomiy": "Homiy",
+        "qomitaMaslahatchi": "Maslahatchi",
+        "qomitaHammuallif": "Hammuallif",
+        "qomitaRais": "Rais",
+        "qomitaRaisOrinbosari": "Rais o'rinbosari",
+        "qomitaKotibiyat": "Kotibiyat",
+        "qomitaXazinachi": "Xazinachi",
+        "qomitaIlmiyDastur": "Ilmiy dastur",
+        "qomitaReklama": "Reklama",
+        "qomitaLogistika": "Logistika",
+
+        "iMQomitaIsm": "Ism",
+        "iMQomitaMansublik": "Mansublik",
+
+        "maqolaJonatish": "Maqolangizni ushbu elektron pochta manziliga yuborishingiz mumkin",
+        "institutManzil": "Institut manzili",
+        "institutManzilBatafsil": "Farg'ona viloyati, Qo'qon shaxri, Turon ko'chasi, 17-uy",
+        "mavzu": "Mavzu",
+        "annotatsiya": "Annotatsiya",
+        "biografiya": "Biografiyasi"
     
     },
     "ru": {
@@ -72,7 +93,7 @@
         "Fotogalareya": "Фотогалерея",
         "Videogalareya": "Видео галерея",
         "UzbBarqarorRivoj": "Цели устойчивого развития в Узбекистане",
-        "UzbBarqarorRivojContent": "Цели устойчивого развития — это призыв к глобальным действиям по искоренению бедности на Земле, защите окружающей среды и климата и обеспечению мира и процветания всем людям в мире. Цели, которых ООН пытается достичь в Узбекистане:"
+        "UzbBarqarorRivojContent": "Цели устойчивого развития — это призыв к глобальным действиям по искоренению бедности на Земле, защите окружающей среды и климата и обеспечению мира и процветания всем людям в мире. Цели, которых ООН пытается достичь в Узбекистане:",
     
         "qomitaHomiy": "Спонсор",
         "qomitaMaslahatchi": "Консультант",
@@ -86,7 +107,14 @@
         "qomitaLogistika": "Логистика",
 
         "iMQomitaIsm": "Имя",
-        "iMQomitaMansublik": "Принадлежность"
+        "iMQomitaMansublik": "Принадлежность",
+
+        "maqolaJonatish": "Вы можете отправить свою статью на этот адрес электронной почты",
+        "institutManzil": "Адрес института",
+        "institutManzilBatafsil": "улица Турон, 17, город Кокан, Ферганская область",
+        "mavzu": "Тема",
+        "annotatsiya": "Аннотация",
+        "biografiya": "Биография"
     },
     "en": {
         "navLogo": "Kokan state pedagogical institute",
@@ -123,7 +151,28 @@
         "Fotogalareya": "Photo gallery",
         "Videogalareya": "Video gallery",
         "UzbBarqarorRivoj": "Sustainable Development Goals in Uzbekistan",
-        "UzbBarqarorRivojContent": "The Sustainable Development Goals are a call to global action to end poverty on Earth, protect the environment and climate, and ensure that all people around the world enjoy peace and prosperity. The goals that the UN is trying to achieve in Uzbekistan are:"
+        "UzbBarqarorRivojContent": "The Sustainable Development Goals are a call to global action to end poverty on Earth, protect the environment and climate, and ensure that all people around the world enjoy peace and prosperity. The goals that the UN is trying to achieve in Uzbekistan are:",
+
+        "qomitaHomiy": "Sponsor",
+        "qomitaMaslahatchi": "Consultant",
+        "qomitaHammuallif": "Co-author",
+        "qomitaRais": "Chairman",
+        "qomitaRaisOrinbosari": "Deputy chairman",
+        "qomitaKotibiyat": "Secretariat",
+        "qomitaXazinachi": "Treasurer",
+        "qomitaIlmiyDastur": "Scientific program",
+        "qomitaReklama": "Advertising",
+        "qomitaLogistika": "Logistics",
+
+        "iMQomitaIsm": "Name",
+        "iMQomitaMansublik": "Affiliation",
+
+        "maqolaJonatish": "You can send your article to this email address",
+        "institutManzil": "Institute address",
+        "institutManzilBatafsil": "Turon street, 17, Kokand city, Fergana region",
+        "mavzu": "Subject",
+        "annotatsiya": "Annotation",
+        "biografiya": "Biography"
     
     }
 }
