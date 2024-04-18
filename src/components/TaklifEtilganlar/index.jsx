@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
 import APITaklif from "../../services/taklif";
-
+import { useSelector } from "react-redux";
 import TranslateMessage from "../TranslateMessage";
 
 const TaklifEtilganlar = () => {
   const [data, setData] = useState([]);
+  const Lang = useSelector((state) => state.reducerLang.isLang);
 
   useEffect(() => {
     const fechtMuhimSana = async () => {
@@ -37,10 +38,10 @@ const TaklifEtilganlar = () => {
               />
 
               <h3 className="text-xl md:text-2xl xl:text-3xl font-semibold mb-3">
-                {item.name_uz}
+                {item[`name_${Lang}`]}
               </h3>
               <p className="mb-5 text-md md:text-lg xl:text-xl">
-                {item.lavozim_uz}
+                {item[`lavozim_${Lang}`]}
               </p>
             </div>
           ))}
