@@ -14,6 +14,7 @@ import MaqolaJonatishPage from '../pages/MaqolaJonatish';
 import BoglanishPage from '../pages/Boglanish';
 import AsosiyMaruzachiPage from '../pages/AsosiyMaruzachiPage';
 import TaklifEtilganPage from '../pages/TaklifEtilgan';
+import AuthorPage from '../pages/Author';
 
 export const routes = [
     {
@@ -76,10 +77,10 @@ export const routes = [
                 element: <TaklifEtilganPage />,
                 path: "/taklif-etilganlar"
             },
-            // {
-            //     element: ,
-            //     path: ""
-            // },
+            {
+                element: <AuthorPage />,
+                path: "/authors"
+            },
         ]
     }
 ]

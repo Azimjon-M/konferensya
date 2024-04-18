@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import icon from "../../assets/icons/kspi-icon.jpeg";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import uzIcon from "../../assets/icons/flag-uz.png";
 import ruIcon from "../../assets/icons/flag-ru.png";
 import enIcon from "../../assets/icons/flag-en.png";
@@ -14,6 +14,7 @@ import { useDispatch, useSelector } from "react-redux";
 import TranslateMessage from "../TranslateMessage";
 
 const Navbar = () => {
+    const location = useLocation();
     const dispatch = useDispatch();
     const Lang = useSelector((state) => state.reducerLang.isLang);
     const [togglerMenu, setTogglerMenu] = useState(false);
@@ -35,6 +36,11 @@ const Navbar = () => {
         }
     };
     const data = { uz: uzIcon, ru: ruIcon, en: enIcon };
+
+    if (location.pathname === "/authors") {
+        return null
+    }
+    
     return (
         <nav className="z-50 sticky top-0 left-0">
             <div className="navbar bg-base-100 shadow-lg py-3 px-5">

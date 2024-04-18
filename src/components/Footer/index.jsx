@@ -1,12 +1,18 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import Telegram from "../../assets/icons/icon-telegram.png";
 import Instagram from "../../assets/icons/icon-instagram.png";
 import Facebook from "../../assets/icons/icon-facebook.png";
 import Youtube from "../../assets/icons/icon-youtube.png";
 import Rivojlanish from "../Rivojlanish";
+import ItPark from "../../assets/icons/ItPark.png";
 
 const Footer = () => {
+    const location = useLocation();
+
+    if (location.pathname === "/authors") {
+        return null;
+    }
     return (
         <footer className="bg-gray-50">
             <div className="w-full my-10">
@@ -61,11 +67,23 @@ const Footer = () => {
                     </li>
                 </ul>
             </div>
-            <div className="bg-black text-white text-center py-1">
-                <p className="m-0">
-                    © 2024 IT PARK. All Rights Reserved By KSPI IT PARK.
-                </p>
-            </div>
+            <Link to="authors">
+                <div className="bg-black text-white text-center py-4">
+                    <p>
+                        Barcha huquqlar QDPI IT PARK tomonidan himoyalangan ©
+                        2024.
+                    </p>
+                    <p className="flex flex-wrap justify-center items-center m-0">
+                        Ishlab chqaruvchi{" "}
+                        <img
+                            className="w-[20px] h-[20px] ms-2 me-[2px]"
+                            src={ItPark}
+                            alt="it park Logo"
+                        />{" "}
+                        IT PARK
+                    </p>
+                </div>
+            </Link>
         </footer>
     );
 };
