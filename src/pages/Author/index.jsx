@@ -3,6 +3,7 @@ import { AiOutlineLeftCircle } from "react-icons/ai";
 import { FiPhone } from "react-icons/fi";
 import { GoMail } from "react-icons/go";
 import { FaTelegramPlane } from "react-icons/fa";
+import TranslateMessage from "../../components/TranslateMessage";
 
 const AuthorPage = () => {
     const handleClick = () => {
@@ -41,14 +42,14 @@ const AuthorPage = () => {
             <div className="mt-4">
                 <div className="flex justify-center items-center">
                     <h1 className="font-semibold text-[1.3rem] xl:text-[1.5rem] 2xl:text-[1.7rem]">
-                        ISHLAB CHQARUVCHILAR
+                        <TranslateMessage id="authorTitle" />
                     </h1>
                 </div>
             </div>
             <div className="mt-4">
                 <div className="flex justify-center items-center">
                     <h1 className="font-semibold text-[1.1rem] xl:text-[1.2rem] 2xl:text-[1.4rem]">
-                        Front-End dasturchilar:
+                        <TranslateMessage id="authorSubTitle_1" />:
                     </h1>
                 </div>
             </div>
@@ -73,7 +74,7 @@ const AuthorPage = () => {
             <div className="mt-4">
                 <div className="flex justify-center items-center">
                     <h1 className="font-semibold text-[1.1rem] xl:text-[1.2rem] 2xl:text-[1.4rem]">
-                        Back-End API dasturchi:
+                    <TranslateMessage id="authorSubTitle_2" />:
                     </h1>
                 </div>
             </div>

@@ -6,6 +6,7 @@ import Facebook from "../../assets/icons/icon-facebook.png";
 import Youtube from "../../assets/icons/icon-youtube.png";
 import Rivojlanish from "../Rivojlanish";
 import ItPark from "../../assets/icons/ItPark.png";
+import TranslateMessage from "../TranslateMessage";
 
 const Footer = () => {
     const location = useLocation();
@@ -70,11 +71,10 @@ const Footer = () => {
             <Link to="authors">
                 <div className="bg-black text-white text-center py-4">
                     <p>
-                        Barcha huquqlar QDPI IT PARK tomonidan himoyalangan ©
-                        2024.
+                        <TranslateMessage id="footerContetn_1" />
                     </p>
                     <p className="flex flex-wrap justify-center items-center m-0">
-                        Ishlab chqaruvchi{" "}
+                        <TranslateMessage id="footerContetn_2" />
                         <img
                             className="w-[20px] h-[20px] ms-2 me-[2px]"
                             src={ItPark}
