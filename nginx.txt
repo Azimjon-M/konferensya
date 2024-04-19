@@ -1,11 +1,12 @@
-Output
-server {       
-
-        server_name conferences.kspi.uz www.conferences.kspi.uz;
+server { 
+        server_name conferences.kspi.uz;
+        proxy_read_timeout 300;
+        proxy_connect_timeout 300;
+        proxy_send_timeout 300;
 
         
         location / {
-            root /home/kengash/github/kengash/build;
+            root /home/konfirensiya/github/konferensya/build;
             try_files $uri $uri/ /index.html;
             index  index.html index.htm;
         }
@@ -13,19 +14,19 @@ server {
 
     listen [::]:443 ssl ipv6only=on; 
     listen 443 ssl; 
-    ssl_certificate /etc/letsencrypt/live/conferences.kspi.uz/fullchain.pem;
-    ssl_certificate_key /etc/letsencrypt/live/conferences.kspi.uz/privkey.pem;
+    ssl_certificate /home/konfirensiya/github/konferensya/kspisertifikat/STAR.kspi.uz.crt;
+    ssl_certificate_key /home/konfirensiya/github/konferensya/kspisertifikat/STAR_kspi_uz.key;
     
 
 
 }
 server {
-    if ($host = www.conferences.kspi.uz) {
+    if ($host = www.konferences.kspi.uz) {
         return 301 https://$host$request_uri;
     } 
 
 
-    if ($host = conferences.kspi.uz) {
+    if ($host = konferences.kspi.uz) {
         return 301 https://$host$request_uri;
     } 
 
@@ -33,6 +34,6 @@ server {
         listen 80;
         listen [::]:80;
 
-        server_name conferences.kspi.uz www.conferences.kspi.uz;
+        server_name konferences.kspi.uz;
     return 404; 
 }
