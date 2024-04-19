@@ -1,6 +1,6 @@
 server {       
 
-        server_name conferences.kspi.uz www.conferences.kspi.uz;
+        server_name konferences.kspi.uz www.konferences.kspi.uz;
 
         
         location / {
@@ -19,12 +19,12 @@ server {
 
 }
 server {
-    if ($host = www.conferences.kspi.uz) {
+    if ($host = www.konferences.kspi.uz) {
         return 301 https://$host$request_uri;
     } 
 
 
-    if ($host = conferences.kspi.uz) {
+    if ($host = konferences.kspi.uz) {
         return 301 https://$host$request_uri;
     } 
 
@@ -32,6 +32,6 @@ server {
         listen 80;
         listen [::]:80;
 
-        server_name conferences.kspi.uz www.conferences.kspi.uz;
+        server_name konferences.kspi.uz www.konferences.kspi.uz;
     return 404; 
 }
