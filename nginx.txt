@@ -1,6 +1,6 @@
 server {       
 
-        server_name konferences.kspi.uz www.konferences.kspi.uz;
+        server_name konferences.kokanddeveloper.uz www.konferences.kokanddeveloper.uz;
 
         
         location / {
@@ -12,19 +12,19 @@ server {
 
     listen [::]:443 ssl ipv6only=on; 
     listen 443 ssl; 
-    ssl_certificate /home/konfirensiya/github/konferensya/kspisertifikat/STAR.kspi.uz.crt;
+    ssl_certificate /home/konfirensiya/github/konferensya/kspisertifikat/STAR.kokanddeveloper.uz.crt;
     ssl_certificate_key /home/konfirensiya/github/konferensya/kspisertifikat/STAR_kspi_uz.key;
     
 
 
 }
 server {
-    if ($host = www.konferences.kspi.uz) {
+    if ($host = www.konferences.kokanddeveloper.uz) {
         return 301 https://$host$request_uri;
     } 
 
 
-    if ($host = konferences.kspi.uz) {
+    if ($host = konferences.kokanddeveloper.uz) {
         return 301 https://$host$request_uri;
     } 
 
@@ -32,6 +32,6 @@ server {
         listen 80;
         listen [::]:80;
 
-        server_name konferences.kspi.uz www.konferences.kspi.uz;
+        server_name konferences.kokanddeveloper.uz www.konferences.kokanddeveloper.uz;
     return 404; 
 }
