@@ -1,0 +1,38 @@
+Output
+server {       
+
+        server_name conferences.kspi.uz www.conferences.kspi.uz;
+
+        
+        location / {
+            root /home/kengash/github/kengash/build;
+            try_files $uri $uri/ /index.html;
+            index  index.html index.htm;
+        }
+
+
+    listen [::]:443 ssl ipv6only=on; 
+    listen 443 ssl; 
+    ssl_certificate /etc/letsencrypt/live/conferences.kspi.uz/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/conferences.kspi.uz/privkey.pem;
+    
+
+
+}
+server {
+    if ($host = www.conferences.kspi.uz) {
+        return 301 https://$host$request_uri;
+    } 
+
+
+    if ($host = conferences.kspi.uz) {
+        return 301 https://$host$request_uri;
+    } 
+
+
+        listen 80;
+        listen [::]:80;
+
+        server_name conferences.kspi.uz www.conferences.kspi.uz;
+    return 404; 
+}
