@@ -1,11 +1,10 @@
-Output
 server {       
 
         server_name conferences.kspi.uz www.conferences.kspi.uz;
 
         
         location / {
-            root /home/kengash/github/kengash/build;
+            root /home/konfirensiya/github/konferensya/build;
             try_files $uri $uri/ /index.html;
             index  index.html index.htm;
         }
@@ -13,8 +12,8 @@ server {
 
     listen [::]:443 ssl ipv6only=on; 
     listen 443 ssl; 
-    ssl_certificate /etc/letsencrypt/live/conferences.kspi.uz/fullchain.pem;
-    ssl_certificate_key /etc/letsencrypt/live/conferences.kspi.uz/privkey.pem;
+    ssl_certificate /home/konfirensiya/github/konferensya/kspisertifikat/STAR.kspi.uz.crt;
+    ssl_certificate_key /home/konfirensiya/github/konferensya/kspisertifikat/STAR_kspi_uz.key;
     
 
 
