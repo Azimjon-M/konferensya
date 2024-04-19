@@ -1,6 +1,9 @@
 server {       
 
-        server_name konferences.kokanddeveloper.uz www.konferences.kokanddeveloper.uz;
+        server_name konferences.kokanddeveloper.uz;
+        proxy_read_timeout 300;
+        proxy_connect_timeout 300;
+        proxy_send_timeout 300;
 
         
         location / {
@@ -32,6 +35,6 @@ server {
         listen 80;
         listen [::]:80;
 
-        server_name konferences.kokanddeveloper.uz www.konferences.kokanddeveloper.uz;
+        server_name konferences.kokanddeveloper.uz;
     return 404; 
 }
