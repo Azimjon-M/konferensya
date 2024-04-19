@@ -1,5 +1,5 @@
 server { 
-        server_name conferences.kspi.uz;
+        server_name konfirensiya.kspi.uz;
         proxy_read_timeout 300;
         proxy_connect_timeout 300;
         proxy_send_timeout 300;
@@ -21,12 +21,12 @@ server {
 
 }
 server {
-    if ($host = www.konferences.kspi.uz) {
+    if ($host = www.konfirensiya.kspi.uz) {
         return 301 https://$host$request_uri;
     } 
 
 
-    if ($host = konferences.kspi.uz) {
+    if ($host = konfirensiya.kspi.uz) {
         return 301 https://$host$request_uri;
     } 
 
@@ -34,6 +34,6 @@ server {
         listen 80;
         listen [::]:80;
 
-        server_name konferences.kspi.uz;
+        server_name konfirensiya.kspi.uz;
     return 404; 
 }
