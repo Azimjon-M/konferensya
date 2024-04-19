@@ -2,7 +2,7 @@ import axios from "axios";
 // const token = "";
 
 const axiosInstance = axios.create({
-  baseURL: "https://konfirensiya.pythonanywhere.com/",
+  baseURL: "http://conferencesapi.kspi.uz/",
   headers: {
     "Content-Type": "application/json",
     // Authorization: `Bearer ${token}`,
