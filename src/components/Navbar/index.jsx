@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import icon from "../../assets/icons/kspi-icon.jpeg";
+import icon from "../../assets/icons/kspi-icon.jpg";
 import { Link, useLocation } from "react-router-dom";
 import uzIcon from "../../assets/icons/flag-uz.png";
 import ruIcon from "../../assets/icons/flag-ru.png";
@@ -37,10 +37,10 @@ const Navbar = () => {
     };
     const data = { uz: uzIcon, ru: ruIcon, en: enIcon };
 
-    if (location.pathname === "/authors") {
-        return null
+    if (location.pathname === "/authors" || location.pathname === "/login") {
+        return null;
     }
-    
+
     return (
         <nav className="z-50 sticky top-0 left-0">
             <div className="navbar bg-base-100 shadow-lg py-3 px-5">
@@ -189,7 +189,11 @@ const Navbar = () => {
                         </li>
                         <li>
                             <div className="dropdown dropdown-hover dropdown-bottom">
-                                <div tabIndex={0} role="button" className="before:absolute before:top-[40%] before:right-[10px] before:rotate-[-45deg] before:w-[8px] before:h-[8px] before:border-l-[2px] before:border-b-[2px] before:border-black pe-[10px]">
+                                <div
+                                    tabIndex={0}
+                                    role="button"
+                                    className="before:absolute before:top-[40%] before:right-[10px] before:rotate-[-45deg] before:w-[8px] before:h-[8px] before:border-l-[2px] before:border-b-[2px] before:border-black pe-[10px]"
+                                >
                                     <TranslateMessage id="navMalumot" />
                                 </div>
                                 <ul
@@ -246,7 +250,11 @@ const Navbar = () => {
                         </li> */}
                         <li>
                             <div className="dropdown dropdown-hover dropdown-bottom">
-                                <div tabIndex={0} role="button" className="before:absolute before:top-[40%] before:right-[10px] before:rotate-[-45deg] before:w-[8px] before:h-[8px] before:border-l-[2px] before:border-b-[2px] before:border-black pe-[10px]">
+                                <div
+                                    tabIndex={0}
+                                    role="button"
+                                    className="before:absolute before:top-[40%] before:right-[10px] before:rotate-[-45deg] before:w-[8px] before:h-[8px] before:border-l-[2px] before:border-b-[2px] before:border-black pe-[10px]"
+                                >
                                     <TranslateMessage id="navMaqola" />
                                 </div>
                                 <ul
@@ -279,7 +287,11 @@ const Navbar = () => {
                         </li>
                         <li>
                             <div className="dropdown dropdown-hover dropdown-bottom">
-                                <div tabIndex={0} role="button" className="before:absolute before:top-[40%] before:right-[10px] before:rotate-[-45deg] before:w-[8px] before:h-[8px] before:border-l-[2px] before:border-b-[2px] before:border-black pe-[10px]">
+                                <div
+                                    tabIndex={0}
+                                    role="button"
+                                    className="before:absolute before:top-[40%] before:right-[10px] before:rotate-[-45deg] before:w-[8px] before:h-[8px] before:border-l-[2px] before:border-b-[2px] before:border-black pe-[10px]"
+                                >
                                     <TranslateMessage id="navDastur" />
                                 </div>
                                 <ul

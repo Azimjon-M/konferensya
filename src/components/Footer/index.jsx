@@ -11,7 +11,7 @@ import TranslateMessage from "../TranslateMessage";
 const Footer = () => {
     const location = useLocation();
 
-    if (location.pathname === "/authors") {
+    if (location.pathname === "/authors" || location.pathname ===  "/login") {
         return null;
     }
     return (
