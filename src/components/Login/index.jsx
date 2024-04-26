@@ -1,15 +1,21 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useFormik } from "formik";
 import Logo from "../../assets/icons/kspi-icon.jpg";
 import * as Yup from "yup";
 import APItoken from "../../services/getToken";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
-    const [token, setToken] = useState(null);
+    const navigate = useNavigate()
+    const [errMessage, setErrMessage] = useState("");
     const validationSchema = Yup.object({
-        username: Yup.string().min(5).required("First Name is required"),
-        password: Yup.string().min(6).required("Last Name is required"),
+        username: Yup.string()
+            .min(5)
+            .required("Username must be at least 5 characters"),
+        password: Yup.string().min(10).required("Last Name is required"),
     });
+
+    const data = JSON.parse(localStorage.getItem("data"));
 
     const formik = useFormik({
         initialValues: {
@@ -18,22 +24,37 @@ const Login = () => {
             remember: false,
         },
         validationSchema: validationSchema,
-        onSubmit: (values) => {
-            APItoken.getToken({
+        onSubmit: async (values) => {
+            await APItoken.getToken({
                 username: values.username,
                 password: values.password,
             })
-                .then((res) => setToken(res.data))
-                .catch((err) => console.log(err));
-
-            // formik.resetForm();
-            // alert(JSON.stringify(values, null, 2));
+                .then((res) => {
+                    const data = JSON.stringify({ ...values, token: res?.data?.access });
+                    localStorage.setItem("data", data);
+                    navigate("/admin-panel")
+                })
+                .catch((err) => {
+                    if (err.response.status === 401) {
+                        setErrMessage("Username or Password wrong!");
+                        setTimeout(() => {
+                            setErrMessage("");
+                        }, 3000);
+                    }
+                });
         },
     });
 
-    useEffect(() => {
-        console.log(token);
-    }, [token]);
+    // if localStorage.data be true
+    if (data?.remember) {
+        formik.values.username = data.username;
+        formik.values.password = data.password;
+    }
+
+    const handleClickPassword = () => {
+        const btn = document.getElementById("password");
+        btn.type = btn.type === "text" ? "password" : "text";
+    };
 
     return (
         <div className="w-full h-[100vh] flex justify-center items-center ">
@@ -72,7 +93,10 @@ const Login = () => {
                             value={formik.values.username}
                         />
                     </label>
-                    <label className="flex flex-col gap-1" htmlFor="password">
+                    <label
+                        className="relative flex flex-col gap-1"
+                        htmlFor="password"
+                    >
                         Password
                         <input
                             type="password"
@@ -86,6 +110,12 @@ const Login = () => {
                             onChange={formik.handleChange}
                             value={formik.values.password}
                         />
+                        <div
+                            onClick={handleClickPassword}
+                            className="cursor-pointer absolute top-[50%] right-3 font-bold"
+                        >
+                            M
+                        </div>
                     </label>
                     <div className="form-control">
                         <label className="cursor-pointer justify-start gap-2 label">
@@ -95,7 +125,7 @@ const Login = () => {
                                 type="checkbox"
                                 onChange={formik.handleChange}
                                 value={formik.values.remember}
-                                className="checkbox checkbox-sm checkbox-success"
+                                className="checkbox checkbox-sm checkbox-accent"
                             />
                             <span className="label-text">Remember me</span>
                         </label>
@@ -106,6 +136,11 @@ const Login = () => {
                     >
                         Yuborish
                     </button>
+                    {errMessage && (
+                        <h1 className="text-white font-semibold bg-red-600 rounded-md transfo text-center">
+                            {errMessage}
+                        </h1>
+                    )}
                 </form>
             </div>
         </div>

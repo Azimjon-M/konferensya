@@ -1,4 +1,4 @@
-import axiosInstance from ".";
+import axiosInstance from "./";
 
 const ep = "token/";
 

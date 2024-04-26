@@ -17,6 +17,7 @@ import TaklifEtilganPage from "../pages/TaklifEtilgan";
 import AuthorPage from "../pages/Author";
 
 
+
 export const routes = [
     {
         element: <Root />,
