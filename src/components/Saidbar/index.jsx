@@ -9,6 +9,8 @@ import logo from "../../assets/icons/logo.png";
 import Exit from "../../assets/icons/exit.svg";
 
 import { AiOutlineHome } from "react-icons/ai";
+import {GrCircleInformation, GrShareOption, GrPieChart} from "react-icons/gr"
+import {RiArticleLine} from "react-icons/ri"
 
 const Sidebar = () => {
     const [open, setOpen] = useState(true);
@@ -20,41 +22,125 @@ const Sidebar = () => {
             title: "Home",
             img: <AiOutlineHome />,
             link: "/admin-panel",
-            drop: false,
-        },
-        {
-            id: 2,
-            title: "Ma'lumotlar",
-            img: <AiOutlineHome />,
             drop: true,
             children: [
                 {
                     id: 1.1,
-                    name: "Muhim sana",
+                    name: "Karusel",
+                    link: "/admin-panel/carousel",
                 },
                 {
                     id: 1.2,
-                    name: "Qo'mita",
+                    name: "Hush kelibsiz",
+                    link: "/admin-panel/welcome",
                 },
                 {
                     id: 1.3,
+                    name: "Konferensya bo'limlari",
+                    link: "",
+                },
+                {
+                    id: 1.4,
+                    name: "Jarayonlar ko'rsatkichi",
+                    link: "",
+                },
+                {
+                    id: 1.5,
+                    name: "Muhim sanalar",
+                    link: "",
+                },
+                {
+                    id: 1.6,
+                    name: "Maqola talablari",
+                    link: "",
+                },
+                {
+                    id: 1.7,
+                    name: "Fotogalareya",
+                    link: "",
+                },
+                {
+                    id: 1.8,
+                    name: "Videogalareya",
+                    link: "",
+                },
+            ],
+        },
+        {
+            id: 2,
+            title: "Ma'lumotlar",
+            img: <GrCircleInformation />,
+            drop: true,
+            children: [
+                {
+                    id: 2.1,
+                    name: "Muhim sana",
+                    link: "",
+                },
+                {
+                    id: 2.2,
+                    name: "Qo'mita",
+                    link: "",
+                },
+                {
+                    id: 2.3,
                     name: "Ilmiy maqola qo'mita",
-                }
-            ]
+                    link: "",
+                },
+                {
+                    id: 2.4,
+                    name: "O'tgan voqealar",
+                    link: "",
+                },
+                {
+                    id: 2.5,
+                    name: "Nashr",
+                    link: "",
+                },
+            ],
         },
         {
             id: 3,
-            title: "Talabalar",
-            img: <AiOutlineHome />,
-            link: "/superadmin/talabalar",
-            drop: false,
+            title: "Maqola",
+            img: <RiArticleLine />,
+            drop: true,
+            children: [
+                {
+                    id: 3.1,
+                    name: "Maqola talablari",
+                    link: "",
+                },
+                {
+                    id: 3.2,
+                    name: "Maqola jo'natish",
+                    link: "",
+                },
+            ],
         },
         {
             id: 4,
-            title: "Shartnoma olganlar",
-            img: <AiOutlineHome />,
-            link: "/superadmin/shartnoma-olganlar",
+            title: "Bog'lanish",
+            img: <GrShareOption />,
             drop: false,
+            link: ""
+        },
+        {
+            id: 5,
+            title: "Dastur",
+            img: <GrPieChart />,
+            drop: true,
+            children: [
+                {
+                    id: 5.1,
+                    name: "Asosiy maruzachi",
+                    link: "",
+                },
+                {
+                    id: 5.2,
+                    name: "Taklif etilganlar",
+                    link: "",
+                },
+            ],
         },
     ];
 
@@ -92,42 +178,57 @@ const Sidebar = () => {
                 <ul className="pt-6">
                     {data.map((item, index) => (
                         <li key={index}>
-                            {
-                                !item.drop ? (
-                            <Link
-                                to={item.link}
-                                className={`flex rounded-md p-2 cursor-pointer hover:bg-light-white text-gray-300 text-sm items-center gap-x-4
-                                ${location.pathname === item.link ? "bg-light-white" : ""}`}
-                            >
-                                {item.img}
-                                <span
-                                    className={`${
-                                        !open && "hidden"
-                                    } origin-left duration-200`}
+                            {!item.drop ? (
+                                <Link
+                                    to={item.link}
+                                    className={`flex rounded-md p-2 cursor-pointer hover:bg-light-white text-gray-300 text-sm items-center gap-x-2
+                                ${
+                                    location.pathname === item.link
+                                        ? "bg-light-white"
+                                        : ""
+                                }`}
                                 >
-                                    {item.title}
-                                </span>
-                            </Link>
-                                )
-                                : (
-                                    <div className="text-white">
-                                        <div className="flex rounded-md p-2 cursor-pointer hover:bg-light-white text-gray-300 text-sm items-center gap-x-4">
+                                    {item.img}
+                                    <span
+                                        className={`${
+                                            !open && "hidden"
+                                        } origin-left duration-200`}
+                                    >
+                                        {item.title}
+                                    </span>
+                                </Link>
+                            ) : (
+                                <div className="text-white">
+                                    <div className="flex rounded-md p-2 cursor-pointer hover:bg-light-white text-gray-300 text-sm items-center gap-x-2">
                                         {item.img}
                                         {item.title}
-                                        </div>
-                                        <div className="ms-4">
-                                            {
-                                                item.children.map(child => (
-                                                    <div key={child.id}>
-                                                        {child.name}
-                                                    </div>
-                                                ))
-                                            }
-                                        </div>
                                     </div>
-
-                                )
-                            }
+                                    <div className="ms-4">
+                                        {item.children.map((child) => (
+                                            <div key={child.id} className="ps-4">
+                                                <Link
+                                                    to={child.link}
+                                                    className={`flex rounded-md p-2 cursor-pointer hover:bg-light-white text-gray-300 text-sm items-center
+                                                    ${
+                                                        location.pathname ===
+                                                        child.link
+                                                            ? "bg-light-white"
+                                                            : ""
+                                                    }`}
+                                                >
+                                                    <span
+                                                        className={`${
+                                                            !open && "hidden"
+                                                        } origin-left duration-200`}
+                                                    >
+                                                        {child.name}
+                                                    </span>
+                                                </Link>
+                                            </div>
+                                        ))}
+                                    </div>
+                                </div>
+                            )}
                         </li>
                     ))}
                 </ul>
