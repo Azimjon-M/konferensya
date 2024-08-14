@@ -1,8 +1,6 @@
 // USER
 import Home from "../pages/Home";
-// import Login from "../pages/Login";
-// import AdminPanel from "../pages/AdminPanel";
-
+// Front
 import MuhimSanaPage from "../pages/MuhimSana";
 import QomitaPage from "../pages/QomitaPage";
 import IMQomitaPage from "../pages/IlmiyMaslahatQomita";
@@ -15,21 +13,29 @@ import BoglanishPage from "../pages/Boglanish";
 import AsosiyMaruzachiPage from "../pages/AsosiyMaruzachiPage";
 import TaklifEtilganPage from "../pages/TaklifEtilgan";
 import AuthorPage from "../pages/Author";
+// Admin
+// Home
+import AdminCarousel from "../pages/AdminHome/AdminCarousel";
+import AdminWelcome from "../pages/AdminHome/AdminWelcome";
+import AdminBolim from "../pages/AdminHome/AdminBolim";
+import AdminJarayon from "../pages/AdminHome/AdminJarayon";
+import AdminMuhimSana from "../pages/AdminHome/AdminMuhimSana";
+import AdminMaqolaTopshirish from "../pages/AdminHome/AdminMaqolaTopshirish";
+import AdminFotogalareya from "../pages/AdminHome/AdminFotogalareya";
+import AdminVideogalareya from "../pages/AdminHome/AdminVideogalareya";
+// Ma'lumot
+import MuhimSana from "../pages/AdminMalumotlar/MuhimSana";
+import Qomita from "../pages/AdminMalumotlar/Qomita";
+import IlmiyMaslaxatQomita from "../pages/AdminMalumotlar/IlmiyMaslaxatQomita";
+import OtganVoqealar from "../pages/AdminMalumotlar/OtganVoqealar";
+import Nashr from "../pages/AdminMalumotlar/Nashr";
+// Maqola
+import MaqolaTalablar from "../pages/AdminMaqola/MaqolaTalablar";
+import MaqolaJonatish from "../pages/AdminMaqola/MaqolaJonatish";
+// Bog'lanish
+import AdminBoglanish from "../pages/AdminBoglanish"
+// Dastur
 
-import MuhimSana from "../pages/AdminMalumotlar/MuhimSana"
-import Qomita from "../pages/AdminMalumotlar/Qomita"
-import IlmiyMaslaxatQomita from "../pages/AdminMalumotlar/IlmiyMaslaxatQomita"
-import OtganVoqealar from "../pages/AdminMalumotlar/OtganVoqealar"
-import Nashr from "../pages/AdminMalumotlar/Nashr"
-
-import AdminCarousel from "../pages/AdminHome/AdminCarousel"
-import AdminWelcome from "../pages/AdminHome/AdminWelcome"
-import AdminBolim from "../pages/AdminHome/AdminBolim"
-import AdminJarayon from "../pages/AdminHome/AdminJarayon"
-import AdminMuhimSana from "../pages/AdminHome/AdminMuhimSana"
-import AdminMaqolaTopshirish from "../pages/AdminHome/AdminMaqolaTopshirish"
-import AdminFotogalareya from "../pages/AdminHome/AdminFotogalareya"
-import AdminVideogalareya from "../pages/AdminHome/AdminVideogalareya"
 
 const routes = [
     {
@@ -108,7 +114,7 @@ const routes = [
         element: AsosiyMaruzachiPage,
         isPrivate: false,
         hidden: false,
-    }, 
+    },
 
     {
         id: 12,
@@ -124,60 +130,60 @@ const routes = [
         isPrivate: false,
         hidden: false,
     },
-    
+
     // Admin Panel
     {
         id: 14,
-        path: "/admin-panel/carousel",
+        path: "/admin-panel/home/carousel",
         element: AdminCarousel,
         isPrivate: true,
         hidden: true,
     },
     {
         id: 15,
-        path: "/admin-panel/welcome",
+        path: "/admin-panel/home/welcome",
         element: AdminWelcome,
         isPrivate: true,
         hidden: true,
     },
     {
         id: 16,
-        path: "/admin-panel/bolim",
+        path: "/admin-panel/home/bolim",
         element: AdminBolim,
         isPrivate: true,
         hidden: true,
     },
     {
         id: 17,
-        path: "/admin-panel/jarayon",
+        path: "/admin-panel/home/jarayon",
         element: AdminJarayon,
         isPrivate: true,
         hidden: true,
     },
     {
         id: 18,
-        path: "/admin-panel/muhim-sana",
+        path: "/admin-panel/home/muhim-sana",
         element: AdminMuhimSana,
         isPrivate: true,
         hidden: true,
     },
     {
         id: 19,
-        path: "/admin-panel/maqola-topshirish",
+        path: "/admin-panel/home/maqola-topshirish",
         element: AdminMaqolaTopshirish,
         isPrivate: true,
         hidden: true,
     },
     {
         id: 20,
-        path: "/admin-panel/fotogalareya",
+        path: "/admin-panel/home/fotogalareya",
         element: AdminFotogalareya,
         isPrivate: true,
         hidden: true,
     },
     {
         id: 21,
-        path: "/admin-panel/videogalareya",
+        path: "/admin-panel/home/videogalareya",
         element: AdminVideogalareya,
         isPrivate: true,
         hidden: true,
@@ -185,53 +191,76 @@ const routes = [
 
     {
         id: 22,
-        path: "/admin-panel/muhim-sana",
+        path: "/admin-panel/malumot/muhim-sana",
         element: MuhimSana,
         isPrivate: true,
         hidden: true,
     },
     {
         id: 23,
-        path: "/admin-panel/qomita",
+        path: "/admin-panel/malumot/qomita",
         element: Qomita,
         isPrivate: true,
         hidden: true,
     },
     {
         id: 24,
-        path: "/admin-panel/ilmiy-maslaxat-qomita",
+        path: "/admin-panel/malumot/ilmiy-maslaxat-qomita",
         element: IlmiyMaslaxatQomita,
         isPrivate: true,
         hidden: true,
     },
     {
         id: 25,
-        path: "/admin-panel/muhim-sana",
+        path: "/admin-panel/malumot/muhim-sana",
         element: MuhimSana,
         isPrivate: true,
         hidden: true,
     },
     {
         id: 26,
-        path: "/admin-panel/muhim-sana",
+        path: "/admin-panel/malumot/muhim-sana",
         element: MuhimSana,
         isPrivate: true,
         hidden: true,
     },
     {
         id: 27,
-        path: "/admin-panel/otgan-voqealar",
+        path: "/admin-panel/malumot/otgan-voqealar",
         element: OtganVoqealar,
         isPrivate: true,
         hidden: true,
     },
     {
         id: 27,
-        path: "/admin-panel/nashr",
+        path: "/admin-panel/malumot/nashr",
         element: Nashr,
         isPrivate: true,
         hidden: true,
     },
+
+    {
+        id: 28,
+        path: "/admin-panel/maqola/maqola-talab",
+        element: MaqolaTalablar,
+        isPrivate: true,
+        hidden: true,
+    },
+    {
+        id: 29,
+        path: "/admin-panel/maqola/maqola-jonatish",
+        element: MaqolaJonatish,
+        isPrivate: true,
+        hidden: true,
+    },
+    {
+        id: 30,
+        path: "/admin-panel/boglanish",
+        element: AdminBoglanish,
+        isPrivate: true,
+        hidden: true,
+    },
+    
 ];
 
 export default routes;
