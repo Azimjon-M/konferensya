@@ -33,9 +33,10 @@ import Nashr from "../pages/AdminMalumotlar/Nashr";
 import MaqolaTalablar from "../pages/AdminMaqola/MaqolaTalablar";
 import MaqolaJonatish from "../pages/AdminMaqola/MaqolaJonatish";
 // Bog'lanish
-import AdminBoglanish from "../pages/AdminBoglanish"
+import AdminBoglanish from "../pages/AdminBoglanish";
 // Dastur
-
+import AsosiyMaruzachi from "../pages/AdminDastur/AsosiyMaruzachi";
+import TaklifEtilganlar from "../pages/AdminDastur/TaklifEtilganlar";
 
 const routes = [
     {
@@ -211,20 +212,6 @@ const routes = [
         hidden: true,
     },
     {
-        id: 25,
-        path: "/admin-panel/malumot/muhim-sana",
-        element: MuhimSana,
-        isPrivate: true,
-        hidden: true,
-    },
-    {
-        id: 26,
-        path: "/admin-panel/malumot/muhim-sana",
-        element: MuhimSana,
-        isPrivate: true,
-        hidden: true,
-    },
-    {
         id: 27,
         path: "/admin-panel/malumot/otgan-voqealar",
         element: OtganVoqealar,
@@ -260,7 +247,21 @@ const routes = [
         isPrivate: true,
         hidden: true,
     },
-    
+
+    {
+        id: 31,
+        path: "/admin-panel/dastur/asosiy-maruzachi",
+        element: AsosiyMaruzachi,
+        isPrivate: true,
+        hidden: true,
+    },
+    {
+        id: 32,
+        path: "/admin-panel/dastur/taklif-etilganlar",
+        element: TaklifEtilganlar,
+        isPrivate: true,
+        hidden: true,
+    },
 ];
 
 export default routes;

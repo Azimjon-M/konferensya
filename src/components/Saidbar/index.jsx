@@ -2,15 +2,11 @@ import React, { useState } from "react";
 import { Link, Outlet, useLocation } from "react-router-dom";
 import controlImg from "../../assets/icons/control.png";
 import logo from "../../assets/icons/logo.png";
-// import analitikaImg from "../../assets/icons/Chart.png";
-// import adminImg from "../../assets/icons/adminImg.webp";
-// import talabaImg from "../../assets/icons/graduate.png";
-// import shartnomaImg from "../../assets/icons/contract.png";
 import Exit from "../../assets/icons/exit.svg";
 
 import { AiOutlineHome } from "react-icons/ai";
-import {GrCircleInformation, GrShareOption, GrPieChart} from "react-icons/gr"
-import {RiArticleLine} from "react-icons/ri"
+import { GrCircleInformation, GrShareOption, GrPieChart } from "react-icons/gr";
+import { RiArticleLine } from "react-icons/ri";
 
 const Sidebar = () => {
     const [open, setOpen] = useState(true);
@@ -37,32 +33,32 @@ const Sidebar = () => {
                 {
                     id: 1.3,
                     name: "Konferensya bo'limlari",
-                    link: "/admin-panel/home/",
+                    link: "/admin-panel/home/bolim",
                 },
                 {
                     id: 1.4,
                     name: "Jarayonlar ko'rsatkichi",
-                    link: "/admin-panel/home/",
+                    link: "/admin-panel/home/jarayon",
                 },
                 {
                     id: 1.5,
                     name: "Muhim sanalar",
-                    link: "/admin-panel/home/",
+                    link: "/admin-panel/home/muhim-sana",
                 },
                 {
                     id: 1.6,
                     name: "Maqola talablari",
-                    link: "/admin-panel/home/",
+                    link: "/admin-panel/home/maqola-topshirish",
                 },
                 {
                     id: 1.7,
                     name: "Fotogalareya",
-                    link: "/admin-panel/home/",
+                    link: "/admin-panel/home/fotogalareya",
                 },
                 {
                     id: 1.8,
                     name: "Videogalareya",
-                    link: "/admin-panel/home/",
+                    link: "/admin-panel/home/videogalareya",
                 },
             ],
         },
@@ -75,27 +71,27 @@ const Sidebar = () => {
                 {
                     id: 2.1,
                     name: "Muhim sana",
-                    link: "",
+                    link: "/admin-panel/malumot/muhim-sana",
                 },
                 {
                     id: 2.2,
                     name: "Qo'mita",
-                    link: "",
+                    link: "/admin-panel/malumot/qomita",
                 },
                 {
                     id: 2.3,
                     name: "Ilmiy maqola qo'mita",
-                    link: "",
+                    link: "/admin-panel/malumot/ilmiy-maslaxat-qomita",
                 },
                 {
                     id: 2.4,
                     name: "O'tgan voqealar",
-                    link: "",
+                    link: "/admin-panel/malumot/otgan-voqealar",
                 },
                 {
                     id: 2.5,
                     name: "Nashr",
-                    link: "",
+                    link: "/admin-panel/malumot/nashr",
                 },
             ],
         },
@@ -122,7 +118,7 @@ const Sidebar = () => {
             title: "Bog'lanish",
             img: <GrShareOption />,
             drop: false,
-            link: ""
+            link: "/admin-panel/boglanish",
         },
         {
             id: 5,
@@ -133,12 +129,12 @@ const Sidebar = () => {
                 {
                     id: 5.1,
                     name: "Asosiy maruzachi",
-                    link: "",
+                    link: "/admin-panel/dastur/asosiy-maruzachi",
                 },
                 {
                     id: 5.2,
                     name: "Taklif etilganlar",
-                    link: "",
+                    link: "/admin-panel/dastur/taklif-etilganlar",
                 },
             ],
         },
@@ -205,7 +201,10 @@ const Sidebar = () => {
                                     </div>
                                     <div className="ms-4">
                                         {item.children.map((child) => (
-                                            <div key={child.id} className="ps-4">
+                                            <div
+                                                key={child.id}
+                                                className="ps-4"
+                                            >
                                                 <Link
                                                     to={child.link}
                                                     className={`flex rounded-md p-2 cursor-pointer hover:bg-light-white text-gray-300 text-sm items-center
