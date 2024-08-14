@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import TranslateMessage from "../TranslateMessage";
-import APIHome from "../../services/home";
+import APIMuhumSana from "../../services/homeMuhumSana";
 import { useSelector } from "react-redux";
 
 const AsosiySanalar = () => {
@@ -8,7 +8,7 @@ const AsosiySanalar = () => {
     const [data, setData] = useState(null);
 
     const getData = async () => {
-        await APIHome.getMuhmSana()
+        await APIMuhumSana.getMuhumSana()
             .then((res) => setData(res.data))
             .catch((err) => console.log(err));
     };

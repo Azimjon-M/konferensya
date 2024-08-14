@@ -4,7 +4,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import { Autoplay, Navigation } from "swiper/modules";
-import APIHome from "../../services/home";
+import APICarousel from "../../services/homeCarousel";
 import { useSelector } from "react-redux";
 
 const Carousel = () => {
@@ -12,7 +12,7 @@ const Carousel = () => {
   const [data, setData] = useState(null);
 
   const getData = async () => {
-    await APIHome.getCarousel()
+    await APICarousel.getCarousel()
       .then((res) => setData(res.data))
       .catch((err) => console.log(err));
   };

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import TranslateMessage from "../../components/TranslateMessage/index";
-import APIHome from "../../services/home";
+import APIBolim from "../../services/homeBolim";
 import { useSelector } from "react-redux";
 
 const KonferensyaBolimlari = () => {
@@ -8,7 +8,7 @@ const KonferensyaBolimlari = () => {
     const [data, setData] = useState(null);
 
     const getData = async () => {
-        await APIHome.getBolim()
+        await APIBolim.getBolim()
             .then((res) => setData(res.data))
             .catch((err) => console.log(err));
     };

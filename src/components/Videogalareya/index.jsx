@@ -5,13 +5,13 @@ import "swiper/css/pagination";
 import "../App/style.css";
 import { Pagination, Navigation } from "swiper/modules";
 import TranslateMessage from "../TranslateMessage";
-import APIHome from "../../services/home";
+import APIVideoGalareya from "../../services/homeVideoGalareya";
 
 const Videogalareya = () => {
     const [data, setData] = useState(null);
 
     const getData = async () => {
-        await APIHome.getVideoGalareya()
+        await APIVideoGalareya.getVideoGalareya()
             .then((res) => setData(res.data))
             .catch((err) => console.log(err));
     };

@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import TranslateMessage from "../TranslateMessage";
-import APIHome from "../../services/home";
+import APIMaqolaTalab from "../../services/maqolaTalab";
 
 const MaqolagaQoyTalab = () => {
     const [data, setData] = useState(null);
 
     const getData = async () => {
-        await APIHome.getMaqolaTalab()
+        await APIMaqolaTalab.get()
             .then((res) => setData(res.data))
             .catch((err) => console.log(err));
     };

@@ -1,6 +1,6 @@
 import axiosInstance from "./index";
 
-const ep = "maqola/talablari/";
+const ep = "talab/maqolatalabfile/";
 
 const get = () => axiosInstance.get(ep);
 
