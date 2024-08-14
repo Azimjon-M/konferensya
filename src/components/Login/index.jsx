@@ -58,7 +58,7 @@ const Login = () => {
 
     return (
         <div className="w-full h-[100vh] flex justify-center items-center ">
-            <div className="flex flex-col justify-center gap-2 border rounded-md shadow-2xl p-4">
+            <div className="flex flex-col justify-center gap-2 border rounded-md shadow-2xl p-4 -mt-20">
                 <div className="w-[300px] h-full">
                     <div className="flex justify-center">
                         <img

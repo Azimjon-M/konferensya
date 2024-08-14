@@ -1,14 +1,47 @@
-import React from "react";
-import { Outlet } from "react-router-dom";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
+import { Route, Routes } from "react-router-dom";
+import routItems from "../utils/routes";
+import Main from "../pages/Main";
+import Saidbar from "../components/Saidbar";
+import Login from "../pages/Login";
+import NotFoundPage from "../pages/NotFoundPage";
 
-const Root = () => {
+export const Root = () => {
     return (
         <div>
-            <Navbar />
-            <Outlet />
-            <Footer />
+            <Routes>
+                {/* USER */}
+                <Route element={<Main />}>
+                    {routItems.map((routeItem) => {
+                        const ElementParent = routeItem.element;
+                        return (
+                            !routeItem.isPrivate && (
+                                <Route
+                                    key={routeItem.id}
+                                    path={routeItem.path}
+                                    element={<ElementParent />}
+                                />
+                            )
+                        );
+                    })}
+                </Route>
+                {/* ADMIN */}
+                <Route element={<Saidbar />}>
+                    {routItems.map((routeItem) => {
+                        const ElementParent = routeItem.element;
+                        return (
+                            routeItem.isPrivate && (
+                                <Route
+                                    key={routeItem.id}
+                                    path={routeItem.path}
+                                    element={<ElementParent />}
+                                />
+                            )
+                        );
+                    })}
+                </Route>
+                <Route element={<Login />} path="/login" />
+                <Route path="*" element={<NotFoundPage />} />
+            </Routes>
         </div>
     );
 };

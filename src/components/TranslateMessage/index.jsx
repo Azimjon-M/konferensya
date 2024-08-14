@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import data from "../../languages/index.json";
+import data from "../../language/index.json";
 import { useSelector } from "react-redux";
 
 const TranslateMessage = ({ id = "Bunday id Yo'q!" }) => {
