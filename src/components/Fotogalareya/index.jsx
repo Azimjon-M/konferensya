@@ -1,13 +1,13 @@
 import React, {useState, useEffect} from "react";
 import { Marquee, MarqueeGroup, ImageGroup, Image } from "./styled";
 import TranslateMessage from "../TranslateMessage";
-import APIHome from "../../services/home";
+import APIFotogalareya from "../../services/homeFotogalareya";
 
 const Fotogalareya = () => {
     const [data, setData] = useState(null);
 
     const getData = async () => {
-        await APIHome.getFotoGalareya()
+        await APIFotogalareya.getFotoGalareya()
             .then((res) => setData(res.data))
             .catch((err) => console.log(err));
     };

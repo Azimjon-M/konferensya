@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
-import APIHome from "../../services/home";
+import APIJarayon from "../../services/homeJarayon";
 import TranslateMessage from "../TranslateMessage";
 
 const JarayonlarKorsatkichi = () => {
     const [data, setData] = useState('');
 
     const getData = async () => {
-        await APIHome.getJarayon()
+        await APIJarayon.getJarayon()
             .then((res) => setData(res.data))
             .catch((err) => console.log(err));
     };

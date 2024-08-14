@@ -1,7 +1,10 @@
 import React from "react";
+import AdminMaqolaJonatish from "../../../components/AdminMaqolaJonatish";
 
 const MaqolaJonatish = () => {
-    return <div>MaqolaJonatish</div>;
+    return <div>
+        <AdminMaqolaJonatish />
+    </div>;
 };
 
 export default MaqolaJonatish;

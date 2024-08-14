@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import APIHome from "../../services/home";
+import APIHome from "../../services/homeWelcome";
 import { useSelector } from "react-redux";
 
 const WelcomeSec = () => {
