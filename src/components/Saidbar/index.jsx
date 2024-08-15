@@ -18,7 +18,9 @@ const Sidebar = () => {
     const menuRef = useRef([]);
 
     const toggleMenu = (index) => {
-        setOpenIndex(openIndex === index ? null : index);
+        if (open) {
+            setOpenIndex(openIndex === index ? null : index);
+        }
     };
 
     const data = [
@@ -106,21 +108,10 @@ const Sidebar = () => {
         },
         {
             id: 3,
-            title: "Maqola",
+            title: "Maqola talablari",
             img: <RiArticleLine />,
-            drop: true,
-            children: [
-                {
-                    id: 3.1,
-                    name: "Maqola talablari",
-                    link: "/admin-panel/maqola/maqola-talab",
-                },
-                {
-                    id: 3.2,
-                    name: "Maqola jo'natish",
-                    link: "/admin-panel/maqola/maqola-jonatish",
-                },
-            ],
+            drop: false,
+            link: "/admin-panel/maqola-talab",
         },
         {
             id: 4,
