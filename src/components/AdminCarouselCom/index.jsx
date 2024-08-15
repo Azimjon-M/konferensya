@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from "react";
-import APIInstitutHaqida from "../../services/institutHaqida";
+import APICarousel from "../../services/homeCarousel";
 import { Formik, useFormik } from "formik";
 import MyTextInput from "../MyTextInput";
 import MyTextarea from "../MyTextarea";
@@ -10,12 +10,12 @@ const AdminCarouselCom = () => {
   const [datas, setDatas] = useState([]);
 
   const fileInputRefs = {
-    rasm: useRef(null)
+    rasm: useRef(null),
   };
 
   const fechtData = async () => {
     try {
-      const response = await APIInstitutHaqida.getInstitutHaqida();
+      const response = await APICarousel.getCarousel();
       setDatas(response.data);
     } catch (error) {
       console.error("Xatolik yuz berdi!", error);
@@ -39,12 +39,12 @@ const AdminCarouselCom = () => {
       }
       try {
         // POST
-        if (!edit && datas.length === 0) {
-          await APIInstitutHaqida.postInstitutHaqida(data);
+        if (!edit) {
+          await APICarousel.postCarousel(data);
         }
         // PATCH
         else {
-          await APIInstitutHaqida.patchInstitutHaqida(id, data);
+          await APICarousel.patchCarousel(id, data);
           console.log(data);
           setEdit(false);
           setId(null);
@@ -78,9 +78,9 @@ const AdminCarouselCom = () => {
         title_uz: data.title_uz,
         title_ru: data.title_ru,
         title_en: data.title_en,
-        body_uz: data.body_uz,
-        body_ru: data.body_ru,
-        body_en: data.body_en,
+        content_uz: data.content_uz,
+        content_ru: data.content_ru,
+        content_en: data.content_en,
       });
     }
     fechtData();
@@ -88,7 +88,7 @@ const AdminCarouselCom = () => {
 
   const handleDelete = async (id) => {
     try {
-      await APIInstitutHaqida.delInstitutHaqida(id);
+      await APICarousel.deleteCarousel(id);
       fechtData();
     } catch (error) {
       console.error("Xatolik yuz berdi!", error);
@@ -102,15 +102,15 @@ const AdminCarouselCom = () => {
   return (
     <div className="max-w-[1600px] mx-auto">
       <h1 className="text-3xl font-medium text-gray-700 text-center my-5">
-        Institut haqida
+        Home Carousel
       </h1>
-      <div className="grid grid-cols-4">
-        <div className="col-span-3 border p-5">
+      <div className="grid">
+        <div className="border p-5">
           <Formik>
             <form onSubmit={formik.handleSubmit}>
               <fieldset className="border px-5 pb-5 mb-5">
                 <legend className="text-red-500 font-medium">
-                  Biz haqimizda
+                  Home Carousel
                 </legend>
                 <div className="grid grid-cols-3 gap-2 my-5">
                   <MyTextInput
@@ -144,29 +144,29 @@ const AdminCarouselCom = () => {
                 <div className="grid grid-cols-3 gap-2 my-5">
                   <MyTextarea
                     type="text"
-                    id="body_uz"
-                    name="body_uz"
+                    id="content_uz"
+                    name="content_uz"
                     label="Matn"
                     tab="uz"
-                    value={formik.values.body_uz}
+                    value={formik.values.content_uz}
                     onChange={formik.handleChange}
                   />
                   <MyTextarea
                     type="text"
-                    id="body_ru"
-                    name="body_ru"
+                    id="content_ru"
+                    name="content_ru"
                     label="Matn"
                     tab="ru"
-                    value={formik.values.body_ru}
+                    value={formik.values.content_ru}
                     onChange={formik.handleChange}
                   />
                   <MyTextarea
                     type="text"
-                    id="body_en"
-                    name="body_en"
+                    id="content_en"
+                    name="content_en"
                     label="Matn"
                     tab="eng"
-                    value={formik.values.body_en}
+                    value={formik.values.content_en}
                     onChange={formik.handleChange}
                   />
                 </div>
@@ -179,61 +179,56 @@ const AdminCarouselCom = () => {
                     tab=""
                     innerRef={fileInputRefs.rasm}
                     onChange={(event) =>
-                      formik.setFieldValue(
-                        "rasm",
-                        event.currentTarget.files[0]
-                      )
+                      formik.setFieldValue("rasm", event.currentTarget.files[0])
                     }
                   />
                 </div>
-              <button type="submit" className="btn btn-success w-full">
-                {!edit ? "Yuborish" : "Saqlash"}
-              </button>
+                <button type="submit" className="btn btn-success w-full">
+                  {!edit ? "Yuborish" : "Saqlash"}
+                </button>
               </fieldset>
             </form>
           </Formik>
         </div>
-        <div className="col-span-1 border p-2">
+        <div className="border p-2">
           {datas &&
             datas.map((data) => {
               return (
                 <div key={data.id}>
-                  <h3 className="text-xl font-bold font-source text-center text-[#004269]">
-                    {data.title_uz}
-                  </h3>
-                  <p className="text-sm text-center">{data.body_uz}</p>
-                  <div>
-                    <img
-                      src={data.rasm}
-                      alt=""
-                      className="w-full lg:max-h-40 xl:h-[460px] shadow-2xl opacity-75 mt-5"
-                    />
-                  </div>
-                  {/* <div className="text-center py-5">
-                    <a
-                      href={data.pdf_fayl}
-                      className="text-blue-500 font-bold"
-                      target="blank"
-                      rel="noopener noreferrer"
-                    >
-                      PDF variantini yuklab oling
-                    </a>
-                  </div> */}
-                  <div className="flex justify-between py-5">
-                    <button
-                      type="submit"
-                      className="px-3 py-0.5 text-xs rounded-lg border border-teal-500 bg-teal-500 active:bg-white active:text-teal-500 text-gray-800 font-semibold"
-                      onClick={() => handleEdit(data.id)}
-                    >
-                      Taxrirlash
-                    </button>
-                    <button
-                      type="submit"
-                      className="px-3 py-0.5 text-xs rounded-lg border border-red-500 bg-red-500 active:bg-white active:text-red-500 text-gray-800 font-semibold ml-2"
-                      onClick={() => handleDelete(data.id)}
-                    >
-                      O'chirish
-                    </button>
+                  <div className="flex gap-5 rounded-xl bg-gray-100 shadow-md p-3 m-3">
+                    <div className="max-w-40">
+                      <img
+                        src={data.rasm}
+                        alt=""
+                        className="w-full lg:max-h-32 xl:h-[460px] shadow-2xl rounded-xl opacity-85"
+                      />
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-bold font-source text-[#004269]">
+                        <span className="text-red-500">Sarlavha: </span>
+                        {data.title_uz}
+                      </h3>
+                      <p className="text-lg font-bold font-source text-[#004269]">
+                        <span className="text-red-500">Matn: </span>
+                        {data.content_uz}
+                      </p>
+                      <div className="flex justify-end py-5">
+                        <button
+                          type="submit"
+                          className="px-3 py-0.5 text-xs rounded-lg border border-teal-500 bg-teal-500 active:bg-white active:text-teal-500 text-gray-800 font-semibold"
+                          onClick={() => handleEdit(data.id)}
+                        >
+                          Taxrirlash
+                        </button>
+                        <button
+                          type="submit"
+                          className="px-3 py-0.5 text-xs rounded-lg border border-red-500 bg-red-500 active:bg-white active:text-red-500 text-gray-800 font-semibold ml-2"
+                          onClick={() => handleDelete(data.id)}
+                        >
+                          O'chirish
+                        </button>
+                      </div>
+                    </div>
                   </div>
                 </div>
               );
@@ -242,6 +237,6 @@ const AdminCarouselCom = () => {
       </div>
     </div>
   );
-}
+};
 
 export default AdminCarouselCom;
