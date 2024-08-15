@@ -18,7 +18,9 @@ const Sidebar = () => {
     const menuRef = useRef([]);
 
     const toggleMenu = (index) => {
-        setOpenIndex(openIndex === index ? null : index);
+        if (open) {
+            setOpenIndex(openIndex === index ? null : index);
+        }
     };
 
     const data = [
