@@ -6,7 +6,7 @@ import APItoken from "../../services/getToken";
 import { useNavigate } from "react-router-dom";
 
 const Login = () => {
-    const navigate = useNavigate()
+    const navigate = useNavigate();
     const [errMessage, setErrMessage] = useState("");
     const validationSchema = Yup.object({
         username: Yup.string()
@@ -30,9 +30,12 @@ const Login = () => {
                 password: values.password,
             })
                 .then((res) => {
-                    const data = JSON.stringify({ ...values, token: res?.data?.access });
+                    const data = JSON.stringify({
+                        ...values,
+                        token: res?.data?.access,
+                    });
                     localStorage.setItem("data", data);
-                    navigate("/admin-panel")
+                    navigate("/admin-panel/home/carousel");
                 })
                 .catch((err) => {
                     if (err.response.status === 401) {
