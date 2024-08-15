@@ -10,7 +10,7 @@ const AdminMaqolaTalablari = () => {
   const [datas, setDatas] = useState([]);
 
   const fileInputRefs = {
-    rasm: useRef(null),
+    file: useRef(null),
   };
 
   const fechtData = async () => {
