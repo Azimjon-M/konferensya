@@ -31,7 +31,6 @@ import OtganVoqealar from "../pages/AdminMalumotlar/OtganVoqealar";
 import Nashr from "../pages/AdminMalumotlar/Nashr";
 // Maqola
 import MaqolaTalablar from "../pages/AdminMaqola/MaqolaTalablar";
-import MaqolaJonatish from "../pages/AdminMaqola/MaqolaJonatish";
 // Bog'lanish
 import AdminBoglanish from "../pages/AdminBoglanish";
 // Dastur
@@ -228,15 +227,8 @@ const routes = [
 
     {
         id: 28,
-        path: "/admin-panel/maqola/maqola-talab",
+        path: "/admin-panel/maqola-talab",
         element: MaqolaTalablar,
-        isPrivate: true,
-        hidden: true,
-    },
-    {
-        id: 29,
-        path: "/admin-panel/maqola/maqola-jonatish",
-        element: MaqolaJonatish,
         isPrivate: true,
         hidden: true,
     },
