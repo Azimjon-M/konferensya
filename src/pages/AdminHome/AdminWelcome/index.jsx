@@ -1,8 +1,9 @@
 import React from 'react'
+import AdminWelcomeCom from '../../../components/AdminWelcomeCom'
 
 const AdminWelcome = () => {
   return (
-    <div>AdminWelcome</div>
+    <div><AdminWelcomeCom/></div>
   )
 }
 
