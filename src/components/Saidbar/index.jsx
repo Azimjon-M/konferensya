@@ -198,37 +198,27 @@ const Sidebar = () => {
                     </h1>
                 </div>
                 <ul className="pt-6">
-                    {data.map((item) => (
-                        <li key={item.id}>
-                            {!item.drop ? (
-                                <Link
-                                    to={item.link}
-                                    className={`flex rounded-md p-2 cursor-pointer hover:bg-light-white text-gray-300 text-sm items-center gap-x-2
-                                    ${
-                                        location.pathname === item.link
-                                            ? "bg-light-white"
-                                            : ""
-                                    }`}
-                                >
-                                    {item.img}
-                                    <span
-                                        className={`${
-                                            !open && "hidden"
-                                        } origin-left duration-200`}
+                    {data.map((item, index) => {
+                        const isActive =
+                            location.pathname === item.link ||
+                            (item.children &&
+                                item.children.some(
+                                    (child) => location.pathname === child.link
+                                ));
+
+                        return (
+                            <li key={index}>
+                                {!item.drop ? (
+                                    <Link
+                                        to={item.link}
+                                        className={`flex rounded-md p-2 cursor-pointer hover:bg-light-white text-gray-300 text-sm items-center gap-x-2
+                                        ${
+                                            location.pathname === item.link
+                                                ? "bg-light-white"
+                                                : ""
+                                        }`}
                                     >
-                                        {item.title}
-                                    </span>
-                                </Link>
-                            ) : (
-                                <div className="text-white">
-                                    {/* Menyuni ochish/yopish tugmasi */}
-                                    <div
-                                        onClick={() => toggleMenu(item.id)}
-                                        className="dropdown-button flex rounded-md p-2 cursor-pointer hover:bg-light-white text-gray-300 text-sm items-center gap-x-2"
-                                    >
-                                        <div className="text-[1.2rem]">
-                                            {item.img}
-                                        </div>
+                                        {item.img}
                                         <span
                                             className={`${
                                                 !open && "hidden"
@@ -236,50 +226,69 @@ const Sidebar = () => {
                                         >
                                             {item.title}
                                         </span>
-                                    </div>
-                                    {/* Ochilib yopiladigan menyu */}
-                                    <div
-                                        ref={(el) =>
-                                            (menuRef.current[item.id] = el)
-                                        }
-                                        className="dropdown-menu ms-4 overflow-hidden transition-all duration-300"
-                                        style={{
-                                            maxHeight:
-                                                openIndex === item.id
-                                                    ? "auto"
-                                                    : "0px",
-                                        }}
-                                    >
-                                        {item.children.map((child) => (
-                                            <div
-                                                key={child.id}
-                                                className="ps-4"
+                                    </Link>
+                                ) : (
+                                    <div className="text-white">
+                                        <div
+                                            onClick={() => toggleMenu(index)}
+                                            className={`dropdown-button flex rounded-md p-2 cursor-pointer hover:bg-light-white text-gray-300 text-sm items-center gap-x-2
+                                            ${
+                                                isActive ? "bg-light-white" : ""
+                                            }`}
+                                        >
+                                            {item.img}
+                                            <span
+                                                className={`${
+                                                    !open && "hidden"
+                                                } origin-left duration-200`}
                                             >
-                                                <Link
-                                                    to={child.link}
-                                                    className={`flex rounded-md p-2 cursor-pointer hover:bg-light-white text-gray-300 text-sm items-center
-                                                    ${
-                                                        location.pathname ===
-                                                        child.link
-                                                            ? "bg-light-white"
-                                                            : ""
-                                                    }`}
+                                                {item.title}
+                                            </span>
+                                        </div>
+                                        <div
+                                            ref={(el) =>
+                                                (menuRef.current[index] = el)
+                                            }
+                                            className="dropdown-menu ms-4 overflow-hidden transition-all duration-300"
+                                            style={{
+                                                maxHeight:
+                                                    openIndex === index
+                                                        ? "auto"
+                                                        : "0px",
+                                            }}
+                                        >
+                                            {item.children.map((child) => (
+                                                <div
+                                                    key={child.id}
+                                                    className="ps-4"
                                                 >
-                                                    <span
-                                                        className={`${
-                                                            !open && "hidden"
-                                                        } origin-left duration-200`}
+                                                    <Link
+                                                        to={child.link}
+                                                        className={`flex rounded-md p-2 cursor-pointer hover:bg-light-white text-gray-300 text-sm items-center
+                                                        ${
+                                                            location.pathname ===
+                                                            child.link
+                                                                ? "bg-light-white"
+                                                                : ""
+                                                        }`}
                                                     >
-                                                        {child.name}
-                                                    </span>
-                                                </Link>
-                                            </div>
-                                        ))}
+                                                        <span
+                                                            className={`${
+                                                                !open &&
+                                                                "hidden"
+                                                            } origin-left duration-200`}
+                                                        >
+                                                            {child.name}
+                                                        </span>
+                                                    </Link>
+                                                </div>
+                                            ))}
+                                        </div>
                                     </div>
-                                </div>
-                            )}
-                        </li>
-                    ))}
+                                )}
+                            </li>
+                        );
+                    })}
                 </ul>
                 <div className="absolute left-5 bottom-2">
                     <Link
