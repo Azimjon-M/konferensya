@@ -212,7 +212,7 @@ const AdminCarouselCom = () => {
                         <span className="text-red-500">Matn: </span>
                         {data.content_uz}
                       </p>
-                      <div className="flex justify-end py-5">
+                      <div className="flex py-5">
                         <button
                           type="submit"
                           className="px-3 py-0.5 text-xs rounded-lg border border-teal-500 bg-teal-500 active:bg-white active:text-teal-500 text-gray-800 font-semibold"
