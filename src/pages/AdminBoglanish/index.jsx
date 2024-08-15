@@ -1,8 +1,11 @@
 import React from 'react'
+import AdminBoglanishCom from '../../components/AdminBoglanish'
 
 const AdminBoglanish = () => {
   return (
-    <div>AdminBoglanish</div>
+    <div>
+      <AdminBoglanishCom />
+    </div>
   )
 }
 

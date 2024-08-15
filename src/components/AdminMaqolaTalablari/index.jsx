@@ -109,8 +109,8 @@ const AdminMaqolaTalablari = () => {
       <h1 className="text-3xl font-medium text-gray-700 text-center my-5">
         Maqola talablari
       </h1>
-      <div className="grid grid-cols-4">
-        <div className="col-span-3 border p-5">
+      <div className="">
+        <div className="border p-5">
           <Formik>
             <form onSubmit={formik.handleSubmit}>
               <fieldset className="border px-5 pb-5 mb-5">
@@ -224,16 +224,16 @@ const AdminMaqolaTalablari = () => {
             </form>
           </Formik>
         </div>
-        <div className="col-span-1 border p-2">
+        <div className="border p-2">
           {datas &&
             datas.map((data) => {
               return (
                 <div key={data.id}>
-                  <h3 className="text-lg font-bold font-source text-center text-[#004269]">
+                  <h3 className="text-lg font-bold font-source text-[#004269]">
                     {data.title_uz}
                   </h3>
-                  <p className="text-md text-center">{data.subtitle_uz}</p>
-                  <p className="text-md text-center">{data.link_text_uz}</p>
+                  <p className="text-md">{data.subtitle_uz}</p>
+                  <p className="text-md">{data.link_text_uz}</p>
                   {/* <div>
                     <img
                       src={data.rasm}
@@ -241,7 +241,7 @@ const AdminMaqolaTalablari = () => {
                       className="w-full lg:max-h-40 xl:h-[460px] shadow-2xl opacity-75 mt-5"
                     />
                   </div> */}
-                  <div className="text-center py-5">
+                  <div className="py-3">
                     <a
                       href={data.file}
                       className="text-blue-500 font-bold"
@@ -251,7 +251,7 @@ const AdminMaqolaTalablari = () => {
                       PDF variantini yuklab oling
                     </a>
                   </div>
-                  <div className="flex justify-between py-5">
+                  <div className="flex justify-end py-5">
                     <button
                       type="submit"
                       className="px-3 py-0.5 text-xs rounded-lg border border-teal-500 bg-teal-500 active:bg-white active:text-teal-500 text-gray-800 font-semibold"

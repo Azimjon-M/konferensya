@@ -1,5 +1,5 @@
 import React from "react";
-import AdminMaqolaJonatish from "../../../components/AdminMaqolaJonatish";
+import AdminMaqolaJonatish from "../../../components/AdminBoglanish";
 
 const MaqolaJonatish = () => {
     return <div>
