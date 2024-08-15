@@ -1,5 +1,5 @@
 import axios from "axios";
-const token = JSON.parse(localStorage.getItem("data")).token;
+const token = JSON.parse(localStorage.getItem("data"))?.token;
 
 const axiosInstance = axios.create({
     baseURL: "https://conferencesapi.kspi.uz/",
