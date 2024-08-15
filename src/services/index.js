@@ -5,7 +5,7 @@ const token =
 const axiosInstance = axios.create({
   baseURL: "https://conferencesapi.kspi.uz/",
   headers: {
-    "Content-Type": "application/json",
+    "Content-Type": "multipart/form-data",
     Authorization: `Bearer ${token}`,
   },
 });
