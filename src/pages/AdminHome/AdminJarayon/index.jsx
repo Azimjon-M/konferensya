@@ -1,9 +1,12 @@
-import React from 'react'
+import React from "react";
+import AdminJarayonCom from "../../../components/AdminJarayonCom";
 
 const Jarayon = () => {
   return (
-    <div>Jarayon</div>
-  )
-}
+    <div>
+      <AdminJarayonCom />
+    </div>
+  );
+};
 
-export default Jarayon
+export default Jarayon;
