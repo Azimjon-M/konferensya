@@ -1,0 +1,11 @@
+/* Ochilib yopiladigan menyularni dastlab yashiramiz */
+/* .dropdown-menu {
+    height: 0px;
+    overflow: hidden;
+    transition: all 0.2s linear;
+} */
+
+/* Tegishli radio input tanlanganida menyuni ko'rsatamiz */
+/* input[type="radio"]:checked + label + .dropdown-menu {
+    max-height: 500px;
+} */

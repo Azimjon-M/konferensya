@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Link, Outlet, useLocation } from "react-router-dom";
 import controlImg from "../../assets/icons/control.png";
 import logo from "../../assets/icons/logo.png";
@@ -8,9 +8,18 @@ import { AiOutlineHome } from "react-icons/ai";
 import { GrCircleInformation, GrShareOption, GrPieChart } from "react-icons/gr";
 import { RiArticleLine } from "react-icons/ri";
 
+import "./style.css";
+
 const Sidebar = () => {
     const [open, setOpen] = useState(true);
     const location = useLocation();
+
+    const [openIndex, setOpenIndex] = useState(null);
+    const menuRef = useRef([]);
+
+    const toggleMenu = (index) => {
+        setOpenIndex(openIndex === index ? null : index);
+    };
 
     const data = [
         {
@@ -140,6 +149,23 @@ const Sidebar = () => {
         },
     ];
 
+    useEffect(() => {
+        menuRef.current.forEach((menu, idx) => {
+            if (menu) {
+                if (openIndex === idx) {
+                    const height = menu.scrollHeight;
+                    menu.style.maxHeight = `${height}px`;
+                } else {
+                    menu.style.maxHeight = "0px";
+                }
+            }
+        });
+    }, [openIndex]);
+
+    useEffect(() => {
+        !open && setOpenIndex(null);
+    }, [open]);
+
     return (
         <div className="flex">
             <div
@@ -172,17 +198,17 @@ const Sidebar = () => {
                     </h1>
                 </div>
                 <ul className="pt-6">
-                    {data.map((item, index) => (
-                        <li key={index}>
+                    {data.map((item) => (
+                        <li key={item.id}>
                             {!item.drop ? (
                                 <Link
                                     to={item.link}
                                     className={`flex rounded-md p-2 cursor-pointer hover:bg-light-white text-gray-300 text-sm items-center gap-x-2
-                                ${
-                                    location.pathname === item.link
-                                        ? "bg-light-white"
-                                        : ""
-                                }`}
+                                    ${
+                                        location.pathname === item.link
+                                            ? "bg-light-white"
+                                            : ""
+                                    }`}
                                 >
                                     {item.img}
                                     <span
@@ -195,11 +221,35 @@ const Sidebar = () => {
                                 </Link>
                             ) : (
                                 <div className="text-white">
-                                    <div className="flex rounded-md p-2 cursor-pointer hover:bg-light-white text-gray-300 text-sm items-center gap-x-2">
-                                        {item.img}
-                                        {item.title}
+                                    {/* Menyuni ochish/yopish tugmasi */}
+                                    <div
+                                        onClick={() => toggleMenu(item.id)}
+                                        className="dropdown-button flex rounded-md p-2 cursor-pointer hover:bg-light-white text-gray-300 text-sm items-center gap-x-2"
+                                    >
+                                        <div className="text-[1.2rem]">
+                                            {item.img}
+                                        </div>
+                                        <span
+                                            className={`${
+                                                !open && "hidden"
+                                            } origin-left duration-200`}
+                                        >
+                                            {item.title}
+                                        </span>
                                     </div>
-                                    <div className="ms-4">
+                                    {/* Ochilib yopiladigan menyu */}
+                                    <div
+                                        ref={(el) =>
+                                            (menuRef.current[item.id] = el)
+                                        }
+                                        className="dropdown-menu ms-4 overflow-hidden transition-all duration-300"
+                                        style={{
+                                            maxHeight:
+                                                openIndex === item.id
+                                                    ? "auto"
+                                                    : "0px",
+                                        }}
+                                    >
                                         {item.children.map((child) => (
                                             <div
                                                 key={child.id}
