@@ -249,7 +249,7 @@ const Sidebar = () => {
                                             ref={(el) =>
                                                 (menuRef.current[index] = el)
                                             }
-                                            className="dropdown-menu ms-4 overflow-hidden transition-all duration-300 mt-2"
+                                            className="dropdown-menu ms-4 overflow-hidden transition-all duration-300"
                                             style={{
                                                 maxHeight:
                                                     openIndex === index
