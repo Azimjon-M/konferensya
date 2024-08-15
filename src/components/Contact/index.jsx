@@ -10,7 +10,7 @@ const Contact = () => {
     const [data, setData] = useState(null);
 
     const getData = async () => {
-        await APIBoglanish.getBoglanish()
+        await APIBoglanish.get()
             .then((res) => setData(res.data))
             .catch((err) => console.log(err));
     };
