@@ -16,7 +16,7 @@ const patchCarousel = (id, item) => {
   return axiosInstance.patch(`${epPatchCarousel}${id}/`, item);
 };
 const deleteCarousel = (id) => {
-  return axiosInstance.delete(`${epDelCarousel}${id}`);
+  return axiosInstance.delete(`${epDelCarousel}${id}/`);
 };
 
 const APICarousel = {
