@@ -1,8 +1,11 @@
 import React from 'react'
+import AdminNashr from '../../../components/AdminNashr'
 
 const Nashr = () => {
   return (
-    <div>Nashr</div>
+    <div>
+      <AdminNashr />
+    </div>
   )
 }
 
