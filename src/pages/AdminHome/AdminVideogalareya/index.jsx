@@ -1,9 +1,15 @@
-import React from 'react'
+import React, { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Videogalareya = () => {
-  return (
-    <div>Videogalareya</div>
-  )
-}
+    const navigate = useNavigate();
+    useEffect(() => {
+        const token = localStorage.getItem("data");
+        if (!token) {
+            navigate("/login");
+        }
+    }, [navigate]);
+    return <div>Videogalareya</div>;
+};
 
-export default Videogalareya
+export default Videogalareya;

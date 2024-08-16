@@ -1,9 +1,18 @@
-import React from 'react'
+import React, { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import AdminMuhimSanalar from "../../../components/AdminMuhimSanalar";
 
 const MuhimSana = () => {
-  return (
-    <div>MuhimSana</div>
-  )
-}
+    const navigate = useNavigate();
+    useEffect(() => {
+        const token = localStorage.getItem("data");
+        if (!token) {
+            navigate("/login");
+        }
+    }, [navigate]);
+    return <div>
+        <AdminMuhimSanalar />
+    </div>;
+};
 
-export default MuhimSana
+export default MuhimSana;
