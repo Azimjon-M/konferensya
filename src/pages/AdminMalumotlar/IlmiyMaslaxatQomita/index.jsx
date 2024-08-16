@@ -1,9 +1,15 @@
-import React from 'react'
+import React, { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 const IlmiyMaslaxatQomita = () => {
-  return (
-    <div>IlmiyMaslaxatQomita</div>
-  )
-}
+    const navigate = useNavigate();
+    useEffect(() => {
+        const token = localStorage.getItem("data");
+        if (!token) {
+            navigate("/login");
+        }
+    }, [navigate]);
+    return <div>IlmiyMaslaxatQomita</div>;
+};
 
-export default IlmiyMaslaxatQomita
+export default IlmiyMaslaxatQomita;

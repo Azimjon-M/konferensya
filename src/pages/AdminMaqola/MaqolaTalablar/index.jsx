@@ -4,13 +4,13 @@ import AdminMaqolaTalablar from "../../../components/AdminMaqolaTalablar";
 import { useNavigate } from "react-router-dom";
 
 const MaqolaTalablar = () => {
-    const navigate = useNavigate()
+    const navigate = useNavigate();
     useEffect(() => {
-        const token = localStorage.getItem("data")
+        const token = localStorage.getItem("data");
         if (!token) {
-            navigate("/login")
+            navigate("/login");
         }
-    }, [navigate])
+    }, [navigate]);
     return (
         <div>
             <AdminMaqolaTalablari />
