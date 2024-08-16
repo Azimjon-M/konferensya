@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import AdminFotoGalareyaCom from "../../../components/AdminFotoGalareyaCom";
 
 const Fotogalareya = () => {
     const navigate = useNavigate();
@@ -9,7 +10,7 @@ const Fotogalareya = () => {
             navigate("/login");
         }
     }, [navigate]);
-    return <div>Fotogalareya</div>;
+    return <div><AdminFotoGalareyaCom/></div>;
 };
 
 export default Fotogalareya;

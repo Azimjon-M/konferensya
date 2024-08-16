@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import AdminVideoGalareyaCom from "../../../components/AdminVideoGalareyaCom";
 
 const Videogalareya = () => {
     const navigate = useNavigate();
@@ -9,7 +10,7 @@ const Videogalareya = () => {
             navigate("/login");
         }
     }, [navigate]);
-    return <div>Videogalareya</div>;
+    return <div><AdminVideoGalareyaCom/></div>;
 };
 
 export default Videogalareya;
