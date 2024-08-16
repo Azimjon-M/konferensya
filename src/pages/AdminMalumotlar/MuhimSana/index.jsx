@@ -10,9 +10,11 @@ const MuhimSana = () => {
             navigate("/login");
         }
     }, [navigate]);
-    return <div>
-        <AdminMuhimSanalar />
-    </div>;
+    return (
+        <div>
+            <AdminMuhimSanalar />
+        </div>
+    );
 };
 
 export default MuhimSana;
