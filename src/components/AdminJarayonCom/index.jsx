@@ -19,9 +19,7 @@ const AdminJarayonCom = () => {
 
   const formik = useFormik({
     initialValues: {
-      title_uz: "",
-      title_ru: "",
-      title_en: "",
+      son: "",
     }, // Initial values for formik
     onSubmit: async (values, onSubmitProps) => {
       const data = new FormData();
@@ -30,7 +28,7 @@ const AdminJarayonCom = () => {
       }
       try {
         // POST
-        if (!edit) {
+        if (!edit && datas.length === 0) {
           await APIJarayon.postJarayon(data);
         }
         // PATCH
@@ -55,9 +53,7 @@ const AdminJarayonCom = () => {
     const data = datas.find((item) => item.id === id);
     if (data) {
       formik.setValues({
-        title_uz: data.title_uz,
-        title_ru: data.title_ru,
-        title_en: data.title_en,
+        son: data.son,
       });
     }
     fechtData();
@@ -81,7 +77,7 @@ const AdminJarayonCom = () => {
       <h1 className="text-3xl font-medium text-gray-700 text-center my-5">
         Home Jarayon
       </h1>
-      <div className="grid">
+      <div className="grid grid-cols-2">
         <div className="border p-5">
           <Formik>
             <form onSubmit={formik.handleSubmit}>
@@ -89,33 +85,17 @@ const AdminJarayonCom = () => {
                 <legend className="text-red-500 font-medium">
                   Home Jarayon
                 </legend>
-                <div className="grid grid-cols-3 gap-2 my-5">
+                <div className="grid gap-2 my-5">
                   <MyTextInput
                     type="number"
-                    id="title_uz"
-                    name="title_uz"
-                    label="Sarlavha"
-                    tab="uz"
-                    value={formik.values.title_uz}
+                    id="son"
+                    name="son"
+                    label="Number"
+                    tab="(1 dan 4 gacha bo'lgan son kiriting)"
+                    value={formik.values.son}
                     onChange={formik.handleChange}
-                  />
-                  <MyTextInput
-                    type="text"
-                    id="title_ru"
-                    name="title_ru"
-                    label="Sarlavha"
-                    tab="ru"
-                    value={formik.values.title_ru}
-                    onChange={formik.handleChange}
-                  />
-                  <MyTextInput
-                    type="text"
-                    id="title_en"
-                    name="title_en"
-                    label="Sarlavha"
-                    tab="eng"
-                    value={formik.values.title_en}
-                    onChange={formik.handleChange}
+                    min="1"
+                    max="4"
                   />
                 </div>
                 <button type="submit" className="btn btn-success w-full">
@@ -130,12 +110,12 @@ const AdminJarayonCom = () => {
             datas.map((data) => {
               return (
                 <div key={data.id}>
-                  <div className="rounded-xl bg-gray-100 shadow-md p-3 m-3">
-                    <h3 className="text-lg font-bold font-source text-[#004269]">
-                      <span className="text-red-500">Sarlavha: </span>
-                      {data.title_uz}
+                  <div className="flex justify-between items-center rounded-xl bg-gray-100 shadow-md p-3 m-3">
+                    <h3 className="text-3xl font-bold font-source text-[#004269]">
+                      <span className="text-red-500">Number: </span>
+                      {data.son}
                     </h3>
-                    <div className="flex py-5">
+                    <div className="py-2">
                       <button
                         type="submit"
                         className="px-3 py-0.5 text-xs rounded-lg border border-teal-500 bg-teal-500 active:bg-white active:text-teal-500 text-gray-800 font-semibold"
