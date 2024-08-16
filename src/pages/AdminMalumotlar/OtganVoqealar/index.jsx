@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import AdminOtganVoqea from "../../../components/AdminOtganVoqea"
 
 const OtganVoqea = () => {
     const navigate = useNavigate();
@@ -9,7 +10,9 @@ const OtganVoqea = () => {
             navigate("/login");
         }
     }, [navigate]);
-    return <div>OtganVoqea</div>;
+    return <div>
+        <AdminOtganVoqea />
+    </div>;
 };
 
 export default OtganVoqea;
