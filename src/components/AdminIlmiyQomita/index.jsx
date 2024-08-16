@@ -1,17 +1,16 @@
 import React, { useEffect, useState } from "react";
-import APIMuhimSana from "../../services/muhimSana";
+import APIIlmiyQomita from "../../services/ilmiyQomita";
 import { Formik, useFormik } from "formik";
 import MyTextInput from "../MyTextInput";
-import MyTextarea from "../MyTextarea";
 
-const AdminMuhimSanalar = () => {
+const AdminIlmiyQomita = () => {
   const [edit, setEdit] = useState(false);
   const [id, setId] = useState(null);
   const [datas, setDatas] = useState([]);
 
   const fechtData = async () => {
     try {
-      const response = await APIMuhimSana.getMuhimSana();
+      const response = await APIIlmiyQomita.getIlmiyQomita();
       setDatas(response.data);
     } catch (error) {
       console.error("Xatolik yuz berdi!", error);
@@ -19,12 +18,12 @@ const AdminMuhimSanalar = () => {
   };
   const formik = useFormik({
     initialValues: {
-      title_uz: "",
-      title_ru: "",
-      title_en: "",
-      body_uz: "",
-      body_ru: "",
-      body_en: "",
+      name_uz: "",
+      name_ru: "",
+      name_en: "",
+      oqish_joyi_uz: "",
+      oqish_joyi_ru: "",
+      oqish_joyi_en: "",
     }, // Initial values for formik
     onSubmit: async (values, onSubmitProps) => {
       const data = new FormData();
@@ -34,11 +33,11 @@ const AdminMuhimSanalar = () => {
       try {
         // POST
         if (!edit) {
-          await APIMuhimSana.post(data);
+          await APIIlmiyQomita.post(data);
         }
         // PATCH
         else {
-          await APIMuhimSana.put(id, data);
+          await APIIlmiyQomita.put(id, data);
           console.log(data);
           setEdit(false);
           setId(null);
@@ -59,12 +58,12 @@ const AdminMuhimSanalar = () => {
     const data = datas.find((item) => item.id === id);
     if (data) {
       formik.setValues({
-        title_uz: data.title_uz,
-        title_ru: data.title_ru,
-        title_en: data.title_en,
-        body_uz: data.body_uz,
-        body_ru: data.body_ru,
-        body_en: data.body_en,
+        name_uz: data.name_uz,
+        name_ru: data.name_ru,
+        name_en: data.name_en,
+        oqish_joyi_uz: data.oqish_joyi_uz,
+        oqish_joyi_ru: data.oqish_joyi_ru,
+        oqish_joyi_en: data.oqish_joyi_en,
       });
     }
     fechtData();
@@ -72,7 +71,7 @@ const AdminMuhimSanalar = () => {
 
   const handleDelete = async (id) => {
     try {
-      await APIMuhimSana.del(id);
+      await APIIlmiyQomita.del(id);
       fechtData();
     } catch (error) {
       console.error("Xatolik yuz berdi!", error);
@@ -86,69 +85,69 @@ const AdminMuhimSanalar = () => {
   return (
     <div className="max-w-[1600px] mx-auto">
       <h1 className="text-3xl font-medium text-gray-700 text-center my-5">
-        Muhim sanalar
+        Ilmiy maqola qo'mita
       </h1>
       <div className="">
         <div className="border p-5">
           <Formik>
             <form onSubmit={formik.handleSubmit}>
               <fieldset className="border px-5 pb-5 mb-5">
-                <legend className="text-red-500 font-medium">Sanalar</legend>
+                <legend className="text-red-500 font-medium">Qo'mita</legend>
                 <div className="grid grid-cols-3 gap-2 my-5">
                   <MyTextInput
                     type="text"
-                    id="title_uz"
-                    name="title_uz"
-                    label="Sarlavha"
+                    id="name_uz"
+                    name="name_uz"
+                    label="F.I.SH"
                     tab="uz"
-                    value={formik.values.title_uz}
+                    value={formik.values.name_uz}
                     onChange={formik.handleChange}
                   />
                   <MyTextInput
                     type="text"
-                    id="title_ru"
-                    name="title_ru"
-                    label="Sarlavha"
+                    id="name_ru"
+                    name="name_ru"
+                    label="F.I.SH"
                     tab="ru"
-                    value={formik.values.title_ru}
+                    value={formik.values.name_ru}
                     onChange={formik.handleChange}
                   />
                   <MyTextInput
                     type="text"
-                    id="title_en"
-                    name="title_en"
-                    label="Sarlavha"
+                    id="name_en"
+                    name="name_en"
+                    label="F.I.SH"
                     tab="eng"
-                    value={formik.values.title_en}
+                    value={formik.values.name_en}
                     onChange={formik.handleChange}
                   />
                 </div>
                 <div className="grid grid-cols-3 gap-2 my-5">
-                  <MyTextarea
+                  <MyTextInput
                     type="text"
-                    id="body_uz"
-                    name="body_uz"
-                    label="Matn"
+                    id="oqish_joyi_uz"
+                    name="oqish_joyi_uz"
+                    label="O'qish joyi"
                     tab="uz"
-                    value={formik.values.body_uz}
+                    value={formik.values.oqish_joyi_uz}
                     onChange={formik.handleChange}
                   />
-                  <MyTextarea
+                  <MyTextInput
                     type="text"
-                    id="body_ru"
-                    name="body_ru"
-                    label="Matn"
+                    id="oqish_joyi_ru"
+                    name="oqish_joyi_ru"
+                    label="O'qish joyi"
                     tab="ru"
-                    value={formik.values.body_ru}
+                    value={formik.values.oqish_joyi_ru}
                     onChange={formik.handleChange}
                   />
-                  <MyTextarea
+                  <MyTextInput
                     type="text"
-                    id="body_en"
-                    name="body_en"
-                    label="Matn"
+                    id="oqish_joyi_en"
+                    name="oqish_joyi_en"
+                    label="O'qish joyi"
                     tab="eng"
-                    value={formik.values.body_en}
+                    value={formik.values.oqish_joyi_en}
                     onChange={formik.handleChange}
                   />
                 </div>
@@ -168,11 +167,11 @@ const AdminMuhimSanalar = () => {
                     <div>
                       <h3 className="text-lg font-bold font-source text-[#004269]">
                         <span className="text-red-500">Sarlavha: </span>
-                        {data.title_uz}
+                        {data.name_uz}
                       </h3>
                       <p className="text-lg font-bold font-source text-[#004269]">
                         <span className="text-red-500">Matn: </span>
-                        {data.body_uz}
+                        {data.oqish_joyi_uz}
                       </p>
                       <div className="flex justify-end py-5">
                         <button
@@ -201,4 +200,4 @@ const AdminMuhimSanalar = () => {
   );
 };
 
-export default AdminMuhimSanalar;
+export default AdminIlmiyQomita;

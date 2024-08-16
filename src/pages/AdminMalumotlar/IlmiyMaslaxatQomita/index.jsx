@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import AdminIlmiyQomita from "../../../components/AdminIlmiyQomita";
 
 const IlmiyMaslaxatQomita = () => {
     const navigate = useNavigate();
@@ -9,7 +10,9 @@ const IlmiyMaslaxatQomita = () => {
             navigate("/login");
         }
     }, [navigate]);
-    return <div>IlmiyMaslaxatQomita</div>;
+    return <div>
+        <AdminIlmiyQomita />
+    </div>;
 };
 
 export default IlmiyMaslaxatQomita;
