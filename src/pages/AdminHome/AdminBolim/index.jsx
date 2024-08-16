@@ -1,8 +1,9 @@
 import React from 'react'
+import AdminBolimCom from '../../../components/AdminBolimCom'
 
 const Bolim = () => {
   return (
-    <div>Bolim</div>
+    <div><AdminBolimCom/></div>
   )
 }
 
