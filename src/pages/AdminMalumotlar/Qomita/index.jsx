@@ -20,9 +20,9 @@ const Qomita = () => {
     const [idRais, setIdRais] = useState(null);
     const [dataRais, setDataRais] = useState([]);
 
-    const [editRaisOrinbosar, setEditRaisOrinbosar] = useState(false);
-    const [idRaisOrinbosar, setIdRaisOrinbosar] = useState(null);
-    const [dataRaisOrinbosar, setDataRaisOrinbosar] = useState([]);
+    const [editRaisOrinbosari, setEditRaisOrinbosari] = useState(false);
+    const [idRaisOrinbosari, setIdRaisOrinbosari] = useState(null);
+    const [dataRaisOrinbosari, setDataRaisOrinbosari] = useState([]);
 
     const [editKotibyat, setEditKotibyat] = useState(false);
     const [idKotibyat, setIdKotibyat] = useState(null);
@@ -67,7 +67,7 @@ const Qomita = () => {
 
     const getDataRaisOrinbosari = async () => {
         await APIQomita.getRaisorinbosari()
-            .then((res) => setDataRaisOrinbosar(res.data))
+            .then((res) => setDataRaisOrinbosari(res.data))
             .catch((err) => console.log(err));
     };
     const getDataKotibyat = async () => {
@@ -120,7 +120,6 @@ const Qomita = () => {
                     setEditHomiy(false);
                     setIdHomiy(null);
                 }
-
                 onSubmitProps.resetForm();
                 getDataHomiy();
             } catch (error) {
@@ -143,19 +142,18 @@ const Qomita = () => {
             }
             try {
                 // POST
-                if (!editHomiy) {
-                    await APIQomita.postHomiy(data);
+                if (!editMaslahatchi) {
+                    await APIQomita.postMaslahatchi(data);
                 }
                 // PATCH
                 else {
-                    await APIQomita.editHomiy(idHomiy, data);
-                    getDataHomiy();
-                    setEditHomiy(false);
-                    setIdHomiy(null);
+                    await APIQomita.editMaslahatchi(idMaslahatchi, data);
+                    getDataMaslahatchi();
+                    setEditMaslahatchi(false);
+                    setIdMaslahatchi(null);
                 }
-
                 onSubmitProps.resetForm();
-                getDataHomiy();
+                getDataMaslahatchi();
             } catch (error) {
                 console.error("Xatolik sodir bo'ldi!", error);
                 onSubmitProps.resetForm();
@@ -176,26 +174,24 @@ const Qomita = () => {
             }
             try {
                 // POST
-                if (!editHomiy) {
-                    await APIQomita.postHomiy(data);
+                if (!editHammuallif) {
+                    await APIQomita.postHammuallif(data);
                 }
                 // PATCH
                 else {
-                    await APIQomita.editHomiy(idHomiy, data);
-                    getDataHomiy();
-                    setEditHomiy(false);
-                    setIdHomiy(null);
+                    await APIQomita.editHammuallif(idHammuallif, data);
+                    getDataHammuallif();
+                    setEditHammuallif(false);
+                    setIdHammuallif(null);
                 }
-
                 onSubmitProps.resetForm();
-                getDataHomiy();
+                getDataHammuallif();
             } catch (error) {
                 console.error("Xatolik sodir bo'ldi!", error);
                 onSubmitProps.resetForm();
             }
         },
     });
-
     const formikRais = useFormik({
         initialValues: {
             name_uz: "",
@@ -209,19 +205,18 @@ const Qomita = () => {
             }
             try {
                 // POST
-                if (!editHomiy) {
-                    await APIQomita.postHomiy(data);
+                if (!editRais) {
+                    await APIQomita.postRais(data);
                 }
                 // PATCH
                 else {
-                    await APIQomita.editHomiy(idHomiy, data);
-                    getDataHomiy();
-                    setEditHomiy(false);
-                    setIdHomiy(null);
+                    await APIQomita.editRais(idRais, data);
+                    getDataRais();
+                    setEditRais(false);
+                    setIdRais(null);
                 }
-
                 onSubmitProps.resetForm();
-                getDataHomiy();
+                getDataRais();
             } catch (error) {
                 console.error("Xatolik sodir bo'ldi!", error);
                 onSubmitProps.resetForm();
@@ -241,19 +236,18 @@ const Qomita = () => {
             }
             try {
                 // POST
-                if (!editHomiy) {
-                    await APIQomita.postHomiy(data);
+                if (!editRaisOrinbosari) {
+                    await APIQomita.postRaisorinbosari(data);
                 }
                 // PATCH
                 else {
-                    await APIQomita.editHomiy(idHomiy, data);
-                    getDataHomiy();
-                    setEditHomiy(false);
-                    setIdHomiy(null);
+                    await APIQomita.editRaisorinbosari(idRaisOrinbosari, data);
+                    getDataRaisOrinbosari();
+                    setEditRaisOrinbosari(false);
+                    setIdRaisOrinbosari(null);
                 }
-
                 onSubmitProps.resetForm();
-                getDataHomiy();
+                getDataRaisOrinbosari();
             } catch (error) {
                 console.error("Xatolik sodir bo'ldi!", error);
                 onSubmitProps.resetForm();
@@ -273,19 +267,18 @@ const Qomita = () => {
             }
             try {
                 // POST
-                if (!editHomiy) {
-                    await APIQomita.postHomiy(data);
+                if (!editKotibyat) {
+                    await APIQomita.postKotibiyat(data);
                 }
                 // PATCH
                 else {
-                    await APIQomita.editHomiy(idHomiy, data);
-                    getDataHomiy();
-                    setEditHomiy(false);
-                    setIdHomiy(null);
+                    await APIQomita.editKotibiyat(idKotibyat, data);
+                    getDataKotibyat();
+                    setEditKotibyat(false);
+                    setIdKotibyat(null);
                 }
-
                 onSubmitProps.resetForm();
-                getDataHomiy();
+                getDataKotibyat();
             } catch (error) {
                 console.error("Xatolik sodir bo'ldi!", error);
                 onSubmitProps.resetForm();
@@ -305,19 +298,18 @@ const Qomita = () => {
             }
             try {
                 // POST
-                if (!editHomiy) {
-                    await APIQomita.postHomiy(data);
+                if (!editHazinabon) {
+                    await APIQomita.postXazinachi(data);
                 }
                 // PATCH
                 else {
-                    await APIQomita.editHomiy(idHomiy, data);
-                    getDataHomiy();
-                    setEditHomiy(false);
-                    setIdHomiy(null);
+                    await APIQomita.editXazinachi(idHazinabon, data);
+                    getDataHazinabon();
+                    setEditHazinabon(false);
+                    setIdHazinabon(null);
                 }
-
                 onSubmitProps.resetForm();
-                getDataHomiy();
+                getDataHazinabon();
             } catch (error) {
                 console.error("Xatolik sodir bo'ldi!", error);
                 onSubmitProps.resetForm();
@@ -337,19 +329,18 @@ const Qomita = () => {
             }
             try {
                 // POST
-                if (!editHomiy) {
-                    await APIQomita.postHomiy(data);
+                if (!editIlmiyDastur) {
+                    await APIQomita.postIlmiydastur(data);
                 }
                 // PATCH
                 else {
-                    await APIQomita.editHomiy(idHomiy, data);
-                    getDataHomiy();
-                    setEditHomiy(false);
-                    setIdHomiy(null);
+                    await APIQomita.editIlmiydastur(idIlmiyDastur, data);
+                    getDataIlmiyDastur();
+                    setEditIlmiyDastur(false);
+                    setIdIlmiyDastur(null);
                 }
-
                 onSubmitProps.resetForm();
-                getDataHomiy();
+                getDataIlmiyDastur();
             } catch (error) {
                 console.error("Xatolik sodir bo'ldi!", error);
                 onSubmitProps.resetForm();
@@ -369,19 +360,18 @@ const Qomita = () => {
             }
             try {
                 // POST
-                if (!editHomiy) {
-                    await APIQomita.postHomiy(data);
+                if (!editReklama) {
+                    await APIQomita.postReklama(data);
                 }
                 // PATCH
                 else {
-                    await APIQomita.editHomiy(idHomiy, data);
-                    getDataHomiy();
-                    setEditHomiy(false);
-                    setIdHomiy(null);
+                    await APIQomita.editReklama(idReklama, data);
+                    getDataReklama();
+                    setEditReklama(false);
+                    setIdReklama(null);
                 }
-
                 onSubmitProps.resetForm();
-                getDataHomiy();
+                getDataReklama();
             } catch (error) {
                 console.error("Xatolik sodir bo'ldi!", error);
                 onSubmitProps.resetForm();
@@ -401,19 +391,18 @@ const Qomita = () => {
             }
             try {
                 // POST
-                if (!editHomiy) {
-                    await APIQomita.postHomiy(data);
+                if (!editLogistika) {
+                    await APIQomita.postLogistika(data);
                 }
                 // PATCH
                 else {
-                    await APIQomita.editHomiy(idHomiy, data);
-                    getDataHomiy();
-                    setEditHomiy(false);
-                    setIdHomiy(null);
+                    await APIQomita.editLogistika(idLogistika, data);
+                    getDataLogistika();
+                    setEditLogistika(false);
+                    setIdLogistika(null);
                 }
-
                 onSubmitProps.resetForm();
-                getDataHomiy();
+                getDataLogistika();
             } catch (error) {
                 console.error("Xatolik sodir bo'ldi!", error);
                 onSubmitProps.resetForm();
@@ -435,121 +424,121 @@ const Qomita = () => {
         getDataHomiy();
     };
     const handleEditMaslahatchi = (id) => {
-        setEditHomiy(true);
-        setIdHomiy(id);
-        const data = dataHomiy.find((item) => item.id === id);
+        setEditMaslahatchi(true);
+        setIdMaslahatchi(id);
+        const data = dataMaslahatchi.find((item) => item.id === id);
         if (data) {
-            formikHomiy.setValues({
+            formikMaslahatchi.setValues({
                 name_uz: data.name_uz,
                 name_ru: data.name_ru,
                 name_en: data.name_en,
             });
         }
-        getDataHomiy();
+        getDataMaslahatchi();
     };
     const handleEditHammuallif = (id) => {
-        setEditHomiy(true);
-        setIdHomiy(id);
-        const data = dataHomiy.find((item) => item.id === id);
+        setEditHammuallif(true);
+        setIdHammuallif(id);
+        const data = dataHammuallif.find((item) => item.id === id);
         if (data) {
-            formikHomiy.setValues({
+            formikHammuallif.setValues({
                 name_uz: data.name_uz,
                 name_ru: data.name_ru,
                 name_en: data.name_en,
             });
         }
-        getDataHomiy();
+        getDataHammuallif();
     };
     const handleEditRais = (id) => {
-        setEditHomiy(true);
-        setIdHomiy(id);
-        const data = dataHomiy.find((item) => item.id === id);
+        setEditRais(true);
+        setIdRais(id);
+        const data = dataRais.find((item) => item.id === id);
         if (data) {
-            formikHomiy.setValues({
+            formikRais.setValues({
                 name_uz: data.name_uz,
                 name_ru: data.name_ru,
                 name_en: data.name_en,
             });
         }
-        getDataHomiy();
+        getDataRais();
     };
     const handleEditRaisOrinbosari = (id) => {
-        setEditHomiy(true);
-        setIdHomiy(id);
-        const data = dataHomiy.find((item) => item.id === id);
+        setEditRaisOrinbosari(true);
+        setIdRaisOrinbosari(id);
+        const data = dataRaisOrinbosari.find((item) => item.id === id);
         if (data) {
-            formikHomiy.setValues({
+            formikRaisOrinbosari.setValues({
                 name_uz: data.name_uz,
                 name_ru: data.name_ru,
                 name_en: data.name_en,
             });
         }
-        getDataHomiy();
+        getDataRaisOrinbosari();
     };
     const handleEditKotibyat = (id) => {
-        setEditHomiy(true);
-        setIdHomiy(id);
-        const data = dataHomiy.find((item) => item.id === id);
+        setEditKotibyat(true);
+        setIdKotibyat(id);
+        const data = dataKotibyat.find((item) => item.id === id);
         if (data) {
-            formikHomiy.setValues({
+            formikKotibyat.setValues({
                 name_uz: data.name_uz,
                 name_ru: data.name_ru,
                 name_en: data.name_en,
             });
         }
-        getDataHomiy();
+        getDataKotibyat();
     };
     const handleEditHazinabon = (id) => {
-        setEditHomiy(true);
-        setIdHomiy(id);
-        const data = dataHomiy.find((item) => item.id === id);
+        setEditHazinabon(true);
+        setIdHazinabon(id);
+        const data = dataHazinabon.find((item) => item.id === id);
         if (data) {
-            formikHomiy.setValues({
+            formikHazinabon.setValues({
                 name_uz: data.name_uz,
                 name_ru: data.name_ru,
                 name_en: data.name_en,
             });
         }
-        getDataHomiy();
+        getDataHazinabon();
     };
     const handleEditIlmiyDastur = (id) => {
-        setEditHomiy(true);
-        setIdHomiy(id);
-        const data = dataHomiy.find((item) => item.id === id);
+        setEditIlmiyDastur(true);
+        setIdIlmiyDastur(id);
+        const data = dataIlmiyDastur.find((item) => item.id === id);
         if (data) {
-            formikHomiy.setValues({
+            formikIlmiyDastur.setValues({
                 name_uz: data.name_uz,
                 name_ru: data.name_ru,
                 name_en: data.name_en,
             });
         }
-        getDataHomiy();
+        getDataIlmiyDastur();
     };
     const handleEditReklama = (id) => {
-        setEditHomiy(true);
-        setIdHomiy(id);
-        const data = dataHomiy.find((item) => item.id === id);
+        setEditReklama(true);
+        setIdReklama(id);
+        const data = dataReklama.find((item) => item.id === id);
         if (data) {
-            formikHomiy.setValues({
+            formikReklama.setValues({
                 name_uz: data.name_uz,
                 name_ru: data.name_ru,
                 name_en: data.name_en,
             });
         }
-        getDataHomiy();
+        getDataReklama();
     };
     const handleEditLogistika = (id) => {
-        setEditHomiy(true);
-        setIdHomiy(id);
-        const data = dataHomiy.find((item) => item.id === id);
+        setEditLogistika(true);
+        setIdLogistika(id);
+        const data = dataLogistika.find((item) => item.id === id);
         if (data) {
-            formikHomiy.setValues({
+            formikLogistika.setValues({
                 name_uz: data.name_uz,
                 name_ru: data.name_ru,
                 name_en: data.name_en,
             });
         }
-        getDataHomiy();
+        getDataLogistika();
     };
 
     const handleDelHomiy = async (id) => {
@@ -562,72 +551,72 @@ const Qomita = () => {
     };
     const handleDelMaslahatchi = async (id) => {
         try {
-            await APIQomita.delHomiy(id);
-            getDataHomiy();
+            await APIQomita.delMaslahatchi(id);
+            getDataMaslahatchi();
         } catch (error) {
             console.error("Xatolik yuz berdi!", error);
         }
     };
-    const handleDelHamuallif = async (id) => {
+    const handleDelHammuallif = async (id) => {
         try {
-            await APIQomita.delHomiy(id);
-            getDataHomiy();
+            await APIQomita.delHammuallif(id);
+            getDataHammuallif();
         } catch (error) {
             console.error("Xatolik yuz berdi!", error);
         }
     };
     const handleDelRais = async (id) => {
         try {
-            await APIQomita.delHomiy(id);
-            getDataHomiy();
+            await APIQomita.delRais(id);
+            getDataRais();
         } catch (error) {
             console.error("Xatolik yuz berdi!", error);
         }
     };
     const handleDelRaisOrinbosari = async (id) => {
         try {
-            await APIQomita.delHomiy(id);
-            getDataHomiy();
+            await APIQomita.delRaisorinbosari(id);
+            getDataRaisOrinbosari();
         } catch (error) {
             console.error("Xatolik yuz berdi!", error);
         }
     };
     const handleDelKotibyat = async (id) => {
         try {
-            await APIQomita.delHomiy(id);
-            getDataHomiy();
+            await APIQomita.delKotibiyat(id);
+            getDataKotibyat();
         } catch (error) {
             console.error("Xatolik yuz berdi!", error);
         }
     };
     const handleDelHazinabon = async (id) => {
         try {
-            await APIQomita.delHomiy(id);
-            getDataHomiy();
+            await APIQomita.delXazinachi(id);
+            getDataHazinabon();
         } catch (error) {
             console.error("Xatolik yuz berdi!", error);
         }
     };
     const handleDelIlmiyDastur = async (id) => {
         try {
-            await APIQomita.delHomiy(id);
-            getDataHomiy();
+            await APIQomita.delIlmiydastur(id);
+            getDataIlmiyDastur();
         } catch (error) {
             console.error("Xatolik yuz berdi!", error);
         }
     };
     const handleDelReklama = async (id) => {
         try {
-            await APIQomita.delHomiy(id);
-            getDataHomiy();
+            await APIQomita.delReklama(id);
+            getDataReklama();
         } catch (error) {
             console.error("Xatolik yuz berdi!", error);
         }
     };
     const handleDelLogistika = async (id) => {
         try {
-            await APIQomita.delHomiy(id);
-            getDataHomiy();
+            await APIQomita.delLogistika(id);
+            getDataLogistika();
         } catch (error) {
             console.error("Xatolik yuz berdi!", error);
         }
@@ -635,6 +624,15 @@ const Qomita = () => {
 
     useEffect(() => {
         getDataHomiy();
+        getDataMaslahatchi();
+        getDataHammuallif();
+        getDataRais();
+        getDataRaisOrinbosari();
+        getDataKotibyat();
+        getDataHazinabon();
+        getDataIlmiyDastur();
+        getDataReklama();
+        getDataLogistika();
     }, []);
 
     return (
@@ -655,7 +653,7 @@ const Qomita = () => {
                                 <div className="grid grid-cols-3 gap-2 my-5">
                                     <MyTextInput
                                         type="text"
-                                        id="name_uz"
+                                        id="name_uz_homiy"
                                         name="name_uz"
                                         label="Text"
                                         tab="uz"
@@ -664,7 +662,7 @@ const Qomita = () => {
                                     />
                                     <MyTextInput
                                         type="text"
-                                        id="name_ru"
+                                        id="name_ru_homiy"
                                         name="name_ru"
                                         label="Text"
                                         tab="ru"
@@ -673,7 +671,7 @@ const Qomita = () => {
                                     />
                                     <MyTextInput
                                         type="text"
-                                        id="name_en"
+                                        id="name_en_homiy"
                                         name="name_en"
                                         label="Text"
                                         tab="en"
@@ -704,12 +702,6 @@ const Qomita = () => {
                                                 </span>
                                                 {item.name_uz}
                                             </h3>
-                                            <p className="text-lg font-bold font-source text-[#004269]">
-                                                <span className="text-red-500">
-                                                    Matn:{" "}
-                                                </span>
-                                                {item.body_uz}
-                                            </p>
                                             <div className="flex justify-end py-5">
                                                 <button
                                                     type="submit"
@@ -742,7 +734,7 @@ const Qomita = () => {
             <div className="mt-10">
                 <div className="border p-5">
                     <Formik>
-                        <form onSubmit={formikHomiy.handleSubmit}>
+                        <form onSubmit={formikMaslahatchi.handleSubmit}>
                             <fieldset className="border px-5 pb-5 mb-5">
                                 <legend className="text-red-500 font-medium">
                                     Maslahatchi
@@ -750,45 +742,51 @@ const Qomita = () => {
                                 <div className="grid grid-cols-3 gap-2 my-5">
                                     <MyTextInput
                                         type="text"
-                                        id="name_uz"
+                                        id="name_uz_Maslahatchi"
                                         name="name_uz"
                                         label="Text"
                                         tab="uz"
-                                        value={formikHomiy.values.name_uz}
-                                        onChange={formikHomiy.handleChange}
+                                        value={formikMaslahatchi.values.name_uz}
+                                        onChange={
+                                            formikMaslahatchi.handleChange
+                                        }
                                     />
                                     <MyTextInput
                                         type="text"
-                                        id="name_ru"
+                                        id="name_ru_Maslahatchi"
                                         name="name_ru"
                                         label="Text"
                                         tab="ru"
-                                        value={formikHomiy.values.name_ru}
-                                        onChange={formikHomiy.handleChange}
+                                        value={formikMaslahatchi.values.name_ru}
+                                        onChange={
+                                            formikMaslahatchi.handleChange
+                                        }
                                     />
                                     <MyTextInput
                                         type="text"
-                                        id="name_en"
+                                        id="name_en_Maslahatchi"
                                         name="name_en"
                                         label="Text"
                                         tab="en"
-                                        value={formikHomiy.values.name_en}
-                                        onChange={formikHomiy.handleChange}
+                                        value={formikMaslahatchi.values.name_en}
+                                        onChange={
+                                            formikMaslahatchi.handleChange
+                                        }
                                     />
                                 </div>
                                 <button
                                     type="submit"
                                     className="btn btn-success w-full"
                                 >
-                                    {!editHomiy ? "Yuborish" : "Saqlash"}
+                                    {!editMaslahatchi ? "Yuborish" : "Saqlash"}
                                 </button>
                             </fieldset>
                         </form>
                     </Formik>
                 </div>
                 <div className="border p-2">
-                    {dataHomiy &&
-                        dataHomiy.map((item) => {
+                    {dataMaslahatchi &&
+                        dataMaslahatchi.map((item) => {
                             return (
                                 <div key={item.id}>
                                     <div className="gap-5 rounded-xl bg-gray-100 shadow-md p-3 m-3">
@@ -799,18 +797,14 @@ const Qomita = () => {
                                                 </span>
                                                 {item.name_uz}
                                             </h3>
-                                            <p className="text-lg font-bold font-source text-[#004269]">
-                                                <span className="text-red-500">
-                                                    Matn:{" "}
-                                                </span>
-                                                {item.body_uz}
-                                            </p>
                                             <div className="flex justify-end py-5">
                                                 <button
                                                     type="submit"
                                                     className="px-3 py-0.5 text-xs rounded-lg border border-teal-500 bg-teal-500 active:bg-white active:text-teal-500 text-gray-800 font-semibold"
                                                     onClick={() =>
-                                                        handleEditHomiy(item.id)
+                                                        handleEditMaslahatchi(
+                                                            item.id
+                                                        )
                                                     }
                                                 >
                                                     Taxrirlash
@@ -819,7 +813,769 @@ const Qomita = () => {
                                                     type="submit"
                                                     className="px-3 py-0.5 text-xs rounded-lg border border-red-500 bg-red-500 active:bg-white active:text-red-500 text-gray-800 font-semibold ml-2"
                                                     onClick={() =>
-                                                        handleDelHomiy(item.id)
+                                                        handleDelMaslahatchi(
+                                                            item.id
+                                                        )
+                                                    }
+                                                >
+                                                    O'chirish
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            );
+                        })}
+                </div>
+            </div>
+
+            {/* Hammuallif */}
+            <div className="mt-10">
+                <div className="border p-5">
+                    <Formik>
+                        <form onSubmit={formikHammuallif.handleSubmit}>
+                            <fieldset className="border px-5 pb-5 mb-5">
+                                <legend className="text-red-500 font-medium">
+                                    Hammuallif
+                                </legend>
+                                <div className="grid grid-cols-3 gap-2 my-5">
+                                    <MyTextInput
+                                        type="text"
+                                        id="name_uz_Hammuallif"
+                                        name="name_uz"
+                                        label="Text"
+                                        tab="uz"
+                                        value={formikHammuallif.values.name_uz}
+                                        onChange={formikHammuallif.handleChange}
+                                    />
+                                    <MyTextInput
+                                        type="text"
+                                        id="name_ru_Hammuallif"
+                                        name="name_ru"
+                                        label="Text"
+                                        tab="ru"
+                                        value={formikHammuallif.values.name_ru}
+                                        onChange={formikHammuallif.handleChange}
+                                    />
+                                    <MyTextInput
+                                        type="text"
+                                        id="name_en_Hammuallif"
+                                        name="name_en"
+                                        label="Text"
+                                        tab="en"
+                                        value={formikHammuallif.values.name_en}
+                                        onChange={formikHammuallif.handleChange}
+                                    />
+                                </div>
+                                <button
+                                    type="submit"
+                                    className="btn btn-success w-full"
+                                >
+                                    {!editHammuallif ? "Yuborish" : "Saqlash"}
+                                </button>
+                            </fieldset>
+                        </form>
+                    </Formik>
+                </div>
+                <div className="border p-2">
+                    {dataHammuallif &&
+                        dataHammuallif.map((item) => {
+                            return (
+                                <div key={item.id}>
+                                    <div className="gap-5 rounded-xl bg-gray-100 shadow-md p-3 m-3">
+                                        <div>
+                                            <h3 className="text-lg font-bold font-source text-[#004269]">
+                                                <span className="text-red-500">
+                                                    Sarlavha:{" "}
+                                                </span>
+                                                {item.name_uz}
+                                            </h3>
+                                            <div className="flex justify-end py-5">
+                                                <button
+                                                    type="submit"
+                                                    className="px-3 py-0.5 text-xs rounded-lg border border-teal-500 bg-teal-500 active:bg-white active:text-teal-500 text-gray-800 font-semibold"
+                                                    onClick={() =>
+                                                        handleEditHammuallif(
+                                                            item.id
+                                                        )
+                                                    }
+                                                >
+                                                    Taxrirlash
+                                                </button>
+                                                <button
+                                                    type="submit"
+                                                    className="px-3 py-0.5 text-xs rounded-lg border border-red-500 bg-red-500 active:bg-white active:text-red-500 text-gray-800 font-semibold ml-2"
+                                                    onClick={() =>
+                                                        handleDelHammuallif(
+                                                            item.id
+                                                        )
+                                                    }
+                                                >
+                                                    O'chirish
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            );
+                        })}
+                </div>
+            </div>
+
+            {/* Rais */}
+            <div className="mt-10">
+                <div className="border p-5">
+                    <Formik>
+                        <form onSubmit={formikRais.handleSubmit}>
+                            <fieldset className="border px-5 pb-5 mb-5">
+                                <legend className="text-red-500 font-medium">
+                                    Rais
+                                </legend>
+                                <div className="grid grid-cols-3 gap-2 my-5">
+                                    <MyTextInput
+                                        type="text"
+                                        id="name_uz_Rais"
+                                        name="name_uz"
+                                        label="Text"
+                                        tab="uz"
+                                        value={formikRais.values.name_uz}
+                                        onChange={formikRais.handleChange}
+                                    />
+                                    <MyTextInput
+                                        type="text"
+                                        id="name_ru_Rais"
+                                        name="name_ru"
+                                        label="Text"
+                                        tab="ru"
+                                        value={formikRais.values.name_ru}
+                                        onChange={formikRais.handleChange}
+                                    />
+                                    <MyTextInput
+                                        type="text"
+                                        id="name_en_Rais"
+                                        name="name_en"
+                                        label="Text"
+                                        tab="en"
+                                        value={formikRais.values.name_en}
+                                        onChange={formikRais.handleChange}
+                                    />
+                                </div>
+                                <button
+                                    type="submit"
+                                    className="btn btn-success w-full"
+                                >
+                                    {!editRais ? "Yuborish" : "Saqlash"}
+                                </button>
+                            </fieldset>
+                        </form>
+                    </Formik>
+                </div>
+                <div className="border p-2">
+                    {dataRais &&
+                        dataRais.map((item) => {
+                            return (
+                                <div key={item.id}>
+                                    <div className="gap-5 rounded-xl bg-gray-100 shadow-md p-3 m-3">
+                                        <div>
+                                            <h3 className="text-lg font-bold font-source text-[#004269]">
+                                                <span className="text-red-500">
+                                                    Sarlavha:{" "}
+                                                </span>
+                                                {item.name_uz}
+                                            </h3>
+                                            <div className="flex justify-end py-5">
+                                                <button
+                                                    type="submit"
+                                                    className="px-3 py-0.5 text-xs rounded-lg border border-teal-500 bg-teal-500 active:bg-white active:text-teal-500 text-gray-800 font-semibold"
+                                                    onClick={() =>
+                                                        handleEditRais(item.id)
+                                                    }
+                                                >
+                                                    Taxrirlash
+                                                </button>
+                                                <button
+                                                    type="submit"
+                                                    className="px-3 py-0.5 text-xs rounded-lg border border-red-500 bg-red-500 active:bg-white active:text-red-500 text-gray-800 font-semibold ml-2"
+                                                    onClick={() =>
+                                                        handleDelRais(item.id)
+                                                    }
+                                                >
+                                                    O'chirish
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            );
+                        })}
+                </div>
+            </div>
+
+            {/* Rais o'rinbosar */}
+            <div className="mt-10">
+                <div className="border p-5">
+                    <Formik>
+                        <form onSubmit={formikRaisOrinbosari.handleSubmit}>
+                            <fieldset className="border px-5 pb-5 mb-5">
+                                <legend className="text-red-500 font-medium">
+                                    Rais o'rinbosar
+                                </legend>
+                                <div className="grid grid-cols-3 gap-2 my-5">
+                                    <MyTextInput
+                                        type="text"
+                                        id="name_uz_raisorinbosar"
+                                        name="name_uz"
+                                        label="Text"
+                                        tab="uz"
+                                        value={
+                                            formikRaisOrinbosari.values.name_uz
+                                        }
+                                        onChange={
+                                            formikRaisOrinbosari.handleChange
+                                        }
+                                    />
+                                    <MyTextInput
+                                        type="text"
+                                        id="name_ru_raisorinbosar"
+                                        name="name_ru"
+                                        label="Text"
+                                        tab="ru"
+                                        value={
+                                            formikRaisOrinbosari.values.name_ru
+                                        }
+                                        onChange={
+                                            formikRaisOrinbosari.handleChange
+                                        }
+                                    />
+                                    <MyTextInput
+                                        type="text"
+                                        id="name_en_raisorinbosar"
+                                        name="name_en"
+                                        label="Text"
+                                        tab="en"
+                                        value={
+                                            formikRaisOrinbosari.values.name_en
+                                        }
+                                        onChange={
+                                            formikRaisOrinbosari.handleChange
+                                        }
+                                    />
+                                </div>
+                                <button
+                                    type="submit"
+                                    className="btn btn-success w-full"
+                                >
+                                    {!editRaisOrinbosari
+                                        ? "Yuborish"
+                                        : "Saqlash"}
+                                </button>
+                            </fieldset>
+                        </form>
+                    </Formik>
+                </div>
+                <div className="border p-2">
+                    {dataRaisOrinbosari &&
+                        dataRaisOrinbosari.map((item) => {
+                            return (
+                                <div key={item.id}>
+                                    <div className="gap-5 rounded-xl bg-gray-100 shadow-md p-3 m-3">
+                                        <div>
+                                            <h3 className="text-lg font-bold font-source text-[#004269]">
+                                                <span className="text-red-500">
+                                                    Sarlavha:{" "}
+                                                </span>
+                                                {item.name_uz}
+                                            </h3>
+                                            <div className="flex justify-end py-5">
+                                                <button
+                                                    type="submit"
+                                                    className="px-3 py-0.5 text-xs rounded-lg border border-teal-500 bg-teal-500 active:bg-white active:text-teal-500 text-gray-800 font-semibold"
+                                                    onClick={() =>
+                                                        handleEditRaisOrinbosari(
+                                                            item.id
+                                                        )
+                                                    }
+                                                >
+                                                    Taxrirlash
+                                                </button>
+                                                <button
+                                                    type="submit"
+                                                    className="px-3 py-0.5 text-xs rounded-lg border border-red-500 bg-red-500 active:bg-white active:text-red-500 text-gray-800 font-semibold ml-2"
+                                                    onClick={() =>
+                                                        handleDelRaisOrinbosari(
+                                                            item.id
+                                                        )
+                                                    }
+                                                >
+                                                    O'chirish
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            );
+                        })}
+                </div>
+            </div>
+
+            {/* Kotibyat */}
+            <div className="mt-10">
+                <div className="border p-5">
+                    <Formik>
+                        <form onSubmit={formikKotibyat.handleSubmit}>
+                            <fieldset className="border px-5 pb-5 mb-5">
+                                <legend className="text-red-500 font-medium">
+                                    Kotibyat
+                                </legend>
+                                <div className="grid grid-cols-3 gap-2 my-5">
+                                    <MyTextInput
+                                        type="text"
+                                        id="name_uz_Kotibyat"
+                                        name="name_uz"
+                                        label="Text"
+                                        tab="uz"
+                                        value={formikKotibyat.values.name_uz}
+                                        onChange={formikKotibyat.handleChange}
+                                    />
+                                    <MyTextInput
+                                        type="text"
+                                        id="name_ru_Kotibyat"
+                                        name="name_ru"
+                                        label="Text"
+                                        tab="ru"
+                                        value={formikKotibyat.values.name_ru}
+                                        onChange={formikKotibyat.handleChange}
+                                    />
+                                    <MyTextInput
+                                        type="text"
+                                        id="name_e_Kotibyatn"
+                                        name="name_en"
+                                        label="Text"
+                                        tab="en"
+                                        value={formikKotibyat.values.name_en}
+                                        onChange={formikKotibyat.handleChange}
+                                    />
+                                </div>
+                                <button
+                                    type="submit"
+                                    className="btn btn-success w-full"
+                                >
+                                    {!editKotibyat ? "Yuborish" : "Saqlash"}
+                                </button>
+                            </fieldset>
+                        </form>
+                    </Formik>
+                </div>
+                <div className="border p-2">
+                    {dataKotibyat &&
+                        dataKotibyat.map((item) => {
+                            return (
+                                <div key={item.id}>
+                                    <div className="gap-5 rounded-xl bg-gray-100 shadow-md p-3 m-3">
+                                        <div>
+                                            <h3 className="text-lg font-bold font-source text-[#004269]">
+                                                <span className="text-red-500">
+                                                    Sarlavha:{" "}
+                                                </span>
+                                                {item.name_uz}
+                                            </h3>
+                                            <div className="flex justify-end py-5">
+                                                <button
+                                                    type="submit"
+                                                    className="px-3 py-0.5 text-xs rounded-lg border border-teal-500 bg-teal-500 active:bg-white active:text-teal-500 text-gray-800 font-semibold"
+                                                    onClick={() =>
+                                                        handleEditKotibyat(
+                                                            item.id
+                                                        )
+                                                    }
+                                                >
+                                                    Taxrirlash
+                                                </button>
+                                                <button
+                                                    type="submit"
+                                                    className="px-3 py-0.5 text-xs rounded-lg border border-red-500 bg-red-500 active:bg-white active:text-red-500 text-gray-800 font-semibold ml-2"
+                                                    onClick={() =>
+                                                        handleDelKotibyat(
+                                                            item.id
+                                                        )
+                                                    }
+                                                >
+                                                    O'chirish
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            );
+                        })}
+                </div>
+            </div>
+
+            {/* Hazinabon */}
+            <div className="mt-10">
+                <div className="border p-5">
+                    <Formik>
+                        <form onSubmit={formikHazinabon.handleSubmit}>
+                            <fieldset className="border px-5 pb-5 mb-5">
+                                <legend className="text-red-500 font-medium">
+                                    Hazinabon
+                                </legend>
+                                <div className="grid grid-cols-3 gap-2 my-5">
+                                    <MyTextInput
+                                        type="text"
+                                        id="name_uz_Hazinabon"
+                                        name="name_uz"
+                                        label="Text"
+                                        tab="uz"
+                                        value={formikHazinabon.values.name_uz}
+                                        onChange={formikHazinabon.handleChange}
+                                    />
+                                    <MyTextInput
+                                        type="text"
+                                        id="name_ru_Hazinabon"
+                                        name="name_ru"
+                                        label="Text"
+                                        tab="ru"
+                                        value={formikHazinabon.values.name_ru}
+                                        onChange={formikHazinabon.handleChange}
+                                    />
+                                    <MyTextInput
+                                        type="text"
+                                        id="name_en_Hazinabon"
+                                        name="name_en"
+                                        label="Text"
+                                        tab="en"
+                                        value={formikHazinabon.values.name_en}
+                                        onChange={formikHazinabon.handleChange}
+                                    />
+                                </div>
+                                <button
+                                    type="submit"
+                                    className="btn btn-success w-full"
+                                >
+                                    {!editHazinabon ? "Yuborish" : "Saqlash"}
+                                </button>
+                            </fieldset>
+                        </form>
+                    </Formik>
+                </div>
+                <div className="border p-2">
+                    {dataHazinabon &&
+                        dataHazinabon.map((item) => {
+                            return (
+                                <div key={item.id}>
+                                    <div className="gap-5 rounded-xl bg-gray-100 shadow-md p-3 m-3">
+                                        <div>
+                                            <h3 className="text-lg font-bold font-source text-[#004269]">
+                                                <span className="text-red-500">
+                                                    Sarlavha:{" "}
+                                                </span>
+                                                {item.name_uz}
+                                            </h3>
+                                            <div className="flex justify-end py-5">
+                                                <button
+                                                    type="submit"
+                                                    className="px-3 py-0.5 text-xs rounded-lg border border-teal-500 bg-teal-500 active:bg-white active:text-teal-500 text-gray-800 font-semibold"
+                                                    onClick={() =>
+                                                        handleEditHazinabon(
+                                                            item.id
+                                                        )
+                                                    }
+                                                >
+                                                    Taxrirlash
+                                                </button>
+                                                <button
+                                                    type="submit"
+                                                    className="px-3 py-0.5 text-xs rounded-lg border border-red-500 bg-red-500 active:bg-white active:text-red-500 text-gray-800 font-semibold ml-2"
+                                                    onClick={() =>
+                                                        handleDelHazinabon(
+                                                            item.id
+                                                        )
+                                                    }
+                                                >
+                                                    O'chirish
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            );
+                        })}
+                </div>
+            </div>
+
+            {/* Ilmiy dastur */}
+            <div className="mt-10">
+                <div className="border p-5">
+                    <Formik>
+                        <form onSubmit={formikIlmiyDastur.handleSubmit}>
+                            <fieldset className="border px-5 pb-5 mb-5">
+                                <legend className="text-red-500 font-medium">
+                                    Ilmiy dastur
+                                </legend>
+                                <div className="grid grid-cols-3 gap-2 my-5">
+                                    <MyTextInput
+                                        type="text"
+                                        id="name_uz_Ilmiydastur"
+                                        name="name_uz"
+                                        label="Text"
+                                        tab="uz"
+                                        value={formikIlmiyDastur.values.name_uz}
+                                        onChange={
+                                            formikIlmiyDastur.handleChange
+                                        }
+                                    />
+                                    <MyTextInput
+                                        type="text"
+                                        id="name_ru_Ilmiydastur"
+                                        name="name_ru"
+                                        label="Text"
+                                        tab="ru"
+                                        value={formikIlmiyDastur.values.name_ru}
+                                        onChange={
+                                            formikIlmiyDastur.handleChange
+                                        }
+                                    />
+                                    <MyTextInput
+                                        type="text"
+                                        id="name_en_Ilmiydastur"
+                                        name="name_en"
+                                        label="Text"
+                                        tab="en"
+                                        value={formikIlmiyDastur.values.name_en}
+                                        onChange={
+                                            formikIlmiyDastur.handleChange
+                                        }
+                                    />
+                                </div>
+                                <button
+                                    type="submit"
+                                    className="btn btn-success w-full"
+                                >
+                                    {!editIlmiyDastur ? "Yuborish" : "Saqlash"}
+                                </button>
+                            </fieldset>
+                        </form>
+                    </Formik>
+                </div>
+                <div className="border p-2">
+                    {dataIlmiyDastur &&
+                        dataIlmiyDastur.map((item) => {
+                            return (
+                                <div key={item.id}>
+                                    <div className="gap-5 rounded-xl bg-gray-100 shadow-md p-3 m-3">
+                                        <div>
+                                            <h3 className="text-lg font-bold font-source text-[#004269]">
+                                                <span className="text-red-500">
+                                                    Sarlavha:{" "}
+                                                </span>
+                                                {item.name_uz}
+                                            </h3>
+                                            <div className="flex justify-end py-5">
+                                                <button
+                                                    type="submit"
+                                                    className="px-3 py-0.5 text-xs rounded-lg border border-teal-500 bg-teal-500 active:bg-white active:text-teal-500 text-gray-800 font-semibold"
+                                                    onClick={() =>
+                                                        handleEditIlmiyDastur(
+                                                            item.id
+                                                        )
+                                                    }
+                                                >
+                                                    Taxrirlash
+                                                </button>
+                                                <button
+                                                    type="submit"
+                                                    className="px-3 py-0.5 text-xs rounded-lg border border-red-500 bg-red-500 active:bg-white active:text-red-500 text-gray-800 font-semibold ml-2"
+                                                    onClick={() =>
+                                                        handleDelIlmiyDastur(
+                                                            item.id
+                                                        )
+                                                    }
+                                                >
+                                                    O'chirish
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            );
+                        })}
+                </div>
+            </div>
+
+            {/* Reklama */}
+            <div className="mt-10">
+                <div className="border p-5">
+                    <Formik>
+                        <form onSubmit={formikReklama.handleSubmit}>
+                            <fieldset className="border px-5 pb-5 mb-5">
+                                <legend className="text-red-500 font-medium">
+                                    Reklama
+                                </legend>
+                                <div className="grid grid-cols-3 gap-2 my-5">
+                                    <MyTextInput
+                                        type="text"
+                                        id="name_uz_Reklama"
+                                        name="name_uz"
+                                        label="Text"
+                                        tab="uz"
+                                        value={formikReklama.values.name_uz}
+                                        onChange={formikReklama.handleChange}
+                                    />
+                                    <MyTextInput
+                                        type="text"
+                                        id="name_ru_Reklama"
+                                        name="name_ru"
+                                        label="Text"
+                                        tab="ru"
+                                        value={formikReklama.values.name_ru}
+                                        onChange={formikReklama.handleChange}
+                                    />
+                                    <MyTextInput
+                                        type="text"
+                                        id="name_en_Reklama"
+                                        name="name_en"
+                                        label="Text"
+                                        tab="en"
+                                        value={formikReklama.values.name_en}
+                                        onChange={formikReklama.handleChange}
+                                    />
+                                </div>
+                                <button
+                                    type="submit"
+                                    className="btn btn-success w-full"
+                                >
+                                    {!editReklama ? "Yuborish" : "Saqlash"}
+                                </button>
+                            </fieldset>
+                        </form>
+                    </Formik>
+                </div>
+                <div className="border p-2">
+                    {dataReklama &&
+                        dataReklama.map((item) => {
+                            return (
+                                <div key={item.id}>
+                                    <div className="gap-5 rounded-xl bg-gray-100 shadow-md p-3 m-3">
+                                        <div>
+                                            <h3 className="text-lg font-bold font-source text-[#004269]">
+                                                <span className="text-red-500">
+                                                    Sarlavha:{" "}
+                                                </span>
+                                                {item.name_uz}
+                                            </h3>
+                                            <div className="flex justify-end py-5">
+                                                <button
+                                                    type="submit"
+                                                    className="px-3 py-0.5 text-xs rounded-lg border border-teal-500 bg-teal-500 active:bg-white active:text-teal-500 text-gray-800 font-semibold"
+                                                    onClick={() =>
+                                                        handleEditReklama(
+                                                            item.id
+                                                        )
+                                                    }
+                                                >
+                                                    Taxrirlash
+                                                </button>
+                                                <button
+                                                    type="submit"
+                                                    className="px-3 py-0.5 text-xs rounded-lg border border-red-500 bg-red-500 active:bg-white active:text-red-500 text-gray-800 font-semibold ml-2"
+                                                    onClick={() =>
+                                                        handleDelReklama(
+                                                            item.id
+                                                        )
+                                                    }
+                                                >
+                                                    O'chirish
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            );
+                        })}
+                </div>
+            </div>
+
+            {/* Logistika */}
+            <div className="mt-10">
+                <div className="border p-5">
+                    <Formik>
+                        <form onSubmit={formikLogistika.handleSubmit}>
+                            <fieldset className="border px-5 pb-5 mb-5">
+                                <legend className="text-red-500 font-medium">
+                                    Logistika
+                                </legend>
+                                <div className="grid grid-cols-3 gap-2 my-5">
+                                    <MyTextInput
+                                        type="text"
+                                        id="name_uz_Logistika"
+                                        name="name_uz"
+                                        label="Text"
+                                        tab="uz"
+                                        value={formikLogistika.values.name_uz}
+                                        onChange={formikLogistika.handleChange}
+                                    />
+                                    <MyTextInput
+                                        type="text"
+                                        id="name_ru_Logistika"
+                                        name="name_ru"
+                                        label="Text"
+                                        tab="ru"
+                                        value={formikLogistika.values.name_ru}
+                                        onChange={formikLogistika.handleChange}
+                                    />
+                                    <MyTextInput
+                                        type="text"
+                                        id="name_en_Logistika"
+                                        name="name_en"
+                                        label="Text"
+                                        tab="en"
+                                        value={formikLogistika.values.name_en}
+                                        onChange={formikLogistika.handleChange}
+                                    />
+                                </div>
+                                <button
+                                    type="submit"
+                                    className="btn btn-success w-full"
+                                >
+                                    {!editLogistika ? "Yuborish" : "Saqlash"}
+                                </button>
+                            </fieldset>
+                        </form>
+                    </Formik>
+                </div>
+                <div className="border p-2">
+                    {dataLogistika &&
+                        dataLogistika.map((item) => {
+                            return (
+                                <div key={item.id}>
+                                    <div className="gap-5 rounded-xl bg-gray-100 shadow-md p-3 m-3">
+                                        <div>
+                                            <h3 className="text-lg font-bold font-source text-[#004269]">
+                                                <span className="text-red-500">
+                                                    Sarlavha:{" "}
+                                                </span>
+                                                {item.name_uz}
+                                            </h3>
+                                            <div className="flex justify-end py-5">
+                                                <button
+                                                    type="submit"
+                                                    className="px-3 py-0.5 text-xs rounded-lg border border-teal-500 bg-teal-500 active:bg-white active:text-teal-500 text-gray-800 font-semibold"
+                                                    onClick={() =>
+                                                        handleEditLogistika(
+                                                            item.id
+                                                        )
+                                                    }
+                                                >
+                                                    Taxrirlash
+                                                </button>
+                                                <button
+                                                    type="submit"
+                                                    className="px-3 py-0.5 text-xs rounded-lg border border-red-500 bg-red-500 active:bg-white active:text-red-500 text-gray-800 font-semibold ml-2"
+                                                    onClick={() =>
+                                                        handleDelLogistika(
+                                                            item.id
+                                                        )
                                                     }
                                                 >
                                                     O'chirish

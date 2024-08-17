@@ -20,7 +20,6 @@ import AdminWelcome from "../pages/AdminHome/AdminWelcome";
 import AdminBolim from "../pages/AdminHome/AdminBolim";
 import AdminJarayon from "../pages/AdminHome/AdminJarayon";
 import AdminMuhimSana from "../pages/AdminHome/AdminMuhimSana";
-import AdminMaqolaTopshirish from "../pages/AdminHome/AdminMaqolaTopshirish";
 import AdminFotogalareya from "../pages/AdminHome/AdminFotogalareya";
 import AdminVideogalareya from "../pages/AdminHome/AdminVideogalareya";
 // Ma'lumot
@@ -164,13 +163,6 @@ const routes = [
         id: 18,
         path: "/admin-panel/home/muhim-sana",
         element: AdminMuhimSana,
-        isPrivate: true,
-        hidden: true,
-    },
-    {
-        id: 19,
-        path: "/admin-panel/home/maqola-topshirish",
-        element: AdminMaqolaTopshirish,
         isPrivate: true,
         hidden: true,
     },

@@ -57,11 +57,6 @@ const Sidebar = () => {
                     link: "/admin-panel/home/muhim-sana",
                 },
                 {
-                    id: 1.6,
-                    name: "Maqola talablari",
-                    link: "/admin-panel/home/maqola-topshirish",
-                },
-                {
                     id: 1.7,
                     name: "Fotogalareya",
                     link: "/admin-panel/home/fotogalareya",
